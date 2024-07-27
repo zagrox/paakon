@@ -2,9 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'web_mobile_nav_model.dart';
 export 'web_mobile_nav_model.dart';
 
@@ -53,7 +50,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: AlignmentDirectional(0.0, 1.0),
+        alignment: const AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 90.0,
@@ -76,7 +73,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                       context.pushNamed(
                         'Account',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -95,7 +92,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.article_outlined,
-                            color: widget!.selectnav == 1
+                            color: widget.selectnav == 1
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 30.0,
@@ -125,7 +122,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                       context.pushNamed(
                         'data',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -144,7 +141,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.forward_to_inbox_sharp,
-                            color: widget!.selectnav == 4
+                            color: widget.selectnav == 4
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 30.0,
@@ -171,14 +168,14 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: widget!.selectnav == 10
+                            color: widget.selectnav == 10
                                 ? FlutterFlowTheme.of(context).alternate
                                 : FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(14.0),
                               bottomRight: Radius.circular(14.0),
                               topLeft: Radius.circular(0.0),
@@ -186,13 +183,13 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 2.0),
                             child: FlutterFlowIconButton(
                               buttonSize: 56.0,
                               icon: Icon(
                                 Icons.cottage_outlined,
-                                color: widget!.selectnav == 10
+                                color: widget.selectnav == 10
                                     ? FlutterFlowTheme.of(context)
                                         .primaryBtnText
                                     : FlutterFlowTheme.of(context)
@@ -203,7 +200,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                                 context.pushNamed(
                                   'bulk',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -224,7 +221,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           context.pushNamed(
                             'bulk',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -253,7 +250,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                       context.pushNamed(
                         'purchase',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -272,7 +269,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.auto_mode,
-                            color: widget!.selectnav == 8
+                            color: widget.selectnav == 8
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 30.0,
@@ -281,7 +278,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             context.pushNamed(
                               'purchase',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -311,7 +308,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                       context.pushNamed(
                         'profile',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -330,7 +327,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.face_retouching_natural_outlined,
-                            color: widget!.selectnav == 6
+                            color: widget.selectnav == 6
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 30.0,
@@ -339,7 +336,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             context.pushNamed(
                               'profile',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),

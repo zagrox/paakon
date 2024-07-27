@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'password_model.dart';
 export 'password_model.dart';
@@ -63,17 +61,17 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                   children: [
                     Container(
                       height: 110.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(4.0),
                                 child: Image.asset(
@@ -86,7 +84,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                             ),
                             if (FFAppState().navOpen == true)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -126,7 +124,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
@@ -140,7 +138,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                           children: [
                             Flexible(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   'برای دریافت گذرواژه، ایمیل خود را وارد کنید',
@@ -159,11 +157,11 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                               color: FlutterFlowTheme.of(context).lineColor,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Container(
                                 width: double.infinity,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 500.0,
                                 ),
                                 decoration: BoxDecoration(
@@ -177,7 +175,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -219,7 +217,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -227,7 +225,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -236,7 +234,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -248,7 +246,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 24.0, 0.0, 24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -264,7 +262,7 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             4.0, 24.0, 4.0, 8.0),
                                         child: FFButtonWidget(
                                           onPressed: () {
@@ -275,10 +273,10 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                             width: double.infinity,
                                             height: 60.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -305,16 +303,16 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 8.0))
-                                        .addToStart(SizedBox(height: 8.0))
-                                        .addToEnd(SizedBox(height: 8.0)),
+                                        .divide(const SizedBox(height: 8.0))
+                                        .addToStart(const SizedBox(height: 8.0))
+                                        .addToEnd(const SizedBox(height: 8.0)),
                                   ),
                                 ),
                               ),
                             ),
                           ]
-                              .divide(SizedBox(height: 8.0))
-                              .around(SizedBox(height: 8.0)),
+                              .divide(const SizedBox(height: 8.0))
+                              .around(const SizedBox(height: 8.0)),
                         ),
                       ),
                     ),

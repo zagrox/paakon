@@ -149,12 +149,12 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF4C61BF);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFE0E3E7);
-  late Color customColor1 = Color(0xFFF1FAEE);
-  late Color customColor2 = Color(0xFFFB8500);
-  late Color customColor3 = Color(0xFF1D3557);
-  late Color customColor4 = Color(0xFF343A40);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFFE0E3E7);
+  late Color customColor1 = const Color(0xFFF1FAEE);
+  late Color customColor2 = const Color(0xFFFB8500);
+  late Color customColor3 = const Color(0xFF1D3557);
+  late Color customColor4 = const Color(0xFF343A40);
 }
 
 abstract class Typography {
@@ -327,12 +327,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF191E52);
-  late Color customColor1 = Color(0xFFA8DADC);
-  late Color customColor2 = Color(0xFFFFB703);
-  late Color customColor3 = Color(0xFF457B9D);
-  late Color customColor4 = Color(0xFFF2F2F2);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFF191E52);
+  late Color customColor1 = const Color(0xFFA8DADC);
+  late Color customColor2 = const Color(0xFFFFB703);
+  late Color customColor3 = const Color(0xFF457B9D);
+  late Color customColor4 = const Color(0xFFF2F2F2);
 }
 
 extension TextStyleHelper on TextStyle {

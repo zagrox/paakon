@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mobile_nav3_model.dart';
 export 'mobile_nav3_model.dart';
 
@@ -55,14 +52,14 @@ class _MobileNav3WidgetState extends State<MobileNav3Widget> {
             BoxShadow(
               blurRadius: 0.0,
               color: FlutterFlowTheme.of(context).lineColor,
-              offset: Offset(
+              offset: const Offset(
                 0.0,
                 -1.0,
               ),
             )
           ],
         ),
-        child: Padding(
+        child: const Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,

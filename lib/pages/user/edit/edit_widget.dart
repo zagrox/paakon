@@ -7,11 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'edit_model.dart';
 export 'edit_model.dart';
 
@@ -70,18 +66,18 @@ class _EditWidgetState extends State<EditWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 6,
                         ),
                       ),
                     ),
                   Flexible(
                     child: Container(
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         minHeight: double.infinity,
                       ),
                       decoration: BoxDecoration(
@@ -93,14 +89,14 @@ class _EditWidgetState extends State<EditWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -114,7 +110,7 @@ class _EditWidgetState extends State<EditWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -123,7 +119,7 @@ class _EditWidgetState extends State<EditWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -144,7 +140,7 @@ class _EditWidgetState extends State<EditWidget> {
                                                           useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  TextSpan(
+                                                  const TextSpan(
                                                     text: ' پروفایل',
                                                     style: TextStyle(),
                                                   )
@@ -175,11 +171,11 @@ class _EditWidgetState extends State<EditWidget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -197,7 +193,7 @@ class _EditWidgetState extends State<EditWidget> {
                                                           useGoogleFonts: false,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -206,7 +202,7 @@ class _EditWidgetState extends State<EditWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 10.0)),
+                                        ].divide(const SizedBox(width: 10.0)),
                                       ),
                                     ),
                                     Card(
@@ -241,7 +237,7 @@ class _EditWidgetState extends State<EditWidget> {
                                           child: Image.network(
                                             _model.isNewImgUploaded
                                                 ? _model.uploadedFileUrl
-                                                : widget!.currentImg!,
+                                                : widget.currentImg!,
                                             width: 150.0,
                                             height: 150.0,
                                             fit: BoxFit.cover,
@@ -315,10 +311,10 @@ class _EditWidgetState extends State<EditWidget> {
                                       options: FFButtonOptions(
                                         width: 150.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .accent3,
@@ -333,7 +329,7 @@ class _EditWidgetState extends State<EditWidget> {
                                               useGoogleFonts: false,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -342,7 +338,7 @@ class _EditWidgetState extends State<EditWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 24.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -361,10 +357,10 @@ class _EditWidgetState extends State<EditWidget> {
                                         options: FFButtonOptions(
                                           height: 50.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -380,7 +376,7 @@ class _EditWidgetState extends State<EditWidget> {
                                                 useGoogleFonts: false,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -390,8 +386,8 @@ class _EditWidgetState extends State<EditWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 12.0))
-                                      .around(SizedBox(height: 12.0)),
+                                      .divide(const SizedBox(height: 12.0))
+                                      .around(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
@@ -404,7 +400,7 @@ class _EditWidgetState extends State<EditWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 6,
                               ),
                             ),

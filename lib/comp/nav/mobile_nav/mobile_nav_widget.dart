@@ -2,9 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mobile_nav_model.dart';
 export 'mobile_nav_model.dart';
 
@@ -53,7 +50,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: AlignmentDirectional(0.0, 1.0),
+        alignment: const AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 90.0,
@@ -76,7 +73,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                       context.pushNamed(
                         'Account',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -95,7 +92,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.cottage_outlined,
-                            color: widget!.selectnav == 1
+                            color: widget.selectnav == 1
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
@@ -125,7 +122,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                       context.pushNamed(
                         'bulk',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -144,7 +141,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.grading_sharp,
-                            color: widget!.selectnav == 2
+                            color: widget.selectnav == 2
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
@@ -174,7 +171,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                       context.pushNamed(
                         'data',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -193,7 +190,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.switch_access_shortcut_add_sharp,
-                            color: widget!.selectnav == 4
+                            color: widget.selectnav == 4
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
@@ -223,7 +220,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                       context.pushNamed(
                         'purchase',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -242,7 +239,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.auto_mode,
-                            color: widget!.selectnav == 8
+                            color: widget.selectnav == 8
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
@@ -251,7 +248,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                             context.pushNamed(
                               'purchase',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -281,7 +278,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                       context.pushNamed(
                         'profile',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -300,7 +297,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           buttonSize: 50.0,
                           icon: Icon(
                             Icons.face_retouching_natural_outlined,
-                            color: widget!.selectnav == 6
+                            color: widget.selectnav == 6
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
@@ -309,7 +306,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                             context.pushNamed(
                               'profile',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),

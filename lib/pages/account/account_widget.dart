@@ -8,12 +8,8 @@ import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'account_model.dart';
 export 'account_model.dart';
 
@@ -95,11 +91,11 @@ class _AccountWidgetState extends State<AccountWidget> {
                         tablet: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.sideNavModel,
                             updateCallback: () => setState(() {}),
-                            child: SideNavWidget(
+                            child: const SideNavWidget(
                               selectnavr: 1,
                             ),
                           ),
@@ -118,7 +114,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(0.0),
@@ -136,11 +132,11 @@ class _AccountWidgetState extends State<AccountWidget> {
                                         wrapWithModel(
                                           model: _model.topNavModel,
                                           updateCallback: () => setState(() {}),
-                                          child: TopNavWidget(),
+                                          child: const TopNavWidget(),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   18.0, 0.0, 18.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -148,7 +144,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 12.0, 8.0, 12.0),
                                                 child: RichText(
@@ -197,14 +193,14 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                     _model.iconsDashboardModel,
                                                 updateCallback: () =>
                                                     setState(() {}),
-                                                child: IconsDashboardWidget(),
+                                                child: const IconsDashboardWidget(),
                                               ),
                                             ],
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -233,7 +229,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(12.0),
+                                                        const EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -251,7 +247,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -288,7 +284,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -344,7 +340,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(12.0),
+                                                        const EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -362,7 +358,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -399,7 +395,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -454,7 +450,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(12.0),
+                                                        const EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -472,7 +468,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -509,7 +505,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -546,39 +542,39 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                 ),
                                               ),
                                             ]
-                                                .divide(SizedBox(width: 18.0))
-                                                .around(SizedBox(width: 18.0)),
+                                                .divide(const SizedBox(width: 18.0))
+                                                .around(const SizedBox(width: 18.0)),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: wrapWithModel(
                                             model: _model.foldersModel,
                                             updateCallback: () =>
                                                 setState(() {}),
-                                            child: FoldersWidget(),
+                                            child: const FoldersWidget(),
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(18.0),
+                                          padding: const EdgeInsets.all(18.0),
                                           child: wrapWithModel(
                                             model: _model.startNowModel,
                                             updateCallback: () =>
                                                 setState(() {}),
-                                            child: StartNowWidget(),
+                                            child: const StartNowWidget(),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
                                           child: wrapWithModel(
                                             model: _model.contactModel,
                                             updateCallback: () =>
                                                 setState(() {}),
-                                            child: ContactWidget(),
+                                            child: const ContactWidget(),
                                           ),
                                         ),
                                       ],
@@ -594,7 +590,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                 wrapWithModel(
                                   model: _model.mobileNavModel,
                                   updateCallback: () => setState(() {}),
-                                  child: MobileNavWidget(
+                                  child: const MobileNavWidget(
                                     selectnav: 1,
                                   ),
                                 ),

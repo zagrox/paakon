@@ -8,11 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'bulk_model.dart';
 export 'bulk_model.dart';
@@ -72,11 +68,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 2,
                         ),
                       ),
@@ -92,19 +88,19 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Container(
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   minHeight: double.infinity,
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
                                     topLeft: Radius.circular(0.0),
@@ -117,7 +113,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -144,7 +140,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: ' انبوه',
                                                   style: TextStyle(),
                                                 )
@@ -193,7 +189,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                   'Home',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -221,23 +217,23 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 12.0))
-                                            .addToStart(SizedBox(width: 24.0))
-                                            .addToEnd(SizedBox(width: 8.0)),
+                                            .divide(const SizedBox(width: 12.0))
+                                            .addToStart(const SizedBox(width: 24.0))
+                                            .addToEnd(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Expanded(
                                       child: Container(
                                         width: double.infinity,
                                         height: 300.0,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                           minHeight: 400.0,
                                         ),
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Column(
                                           children: [
                                             Align(
-                                              alignment: Alignment(0.0, 0),
+                                              alignment: const Alignment(0.0, 0),
                                               child: FlutterFlowButtonTabBar(
                                                 useToggleButtonStyle: false,
                                                 labelStyle:
@@ -277,11 +273,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                 borderRadius: 8.0,
                                                 elevation: 3.0,
                                                 buttonMargin:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             8.0, 0.0, 8.0, 0.0),
-                                                padding: EdgeInsets.all(8.0),
-                                                tabs: [
+                                                padding: const EdgeInsets.all(8.0),
+                                                tabs: const [
                                                   Tab(
                                                     text: 'در حال پاکسازی',
                                                     icon: Icon(
@@ -320,16 +316,16 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Stack(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -0.0, 0.0),
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
@@ -361,7 +357,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            Container(
+                                                                            const SizedBox(
                                                                           height:
                                                                               300.0,
                                                                           child:
@@ -377,7 +373,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                             },
                                                             text:
                                                                 'انتخاب لیست ..',
-                                                            icon: Icon(
+                                                            icon: const Icon(
                                                               Icons
                                                                   .done_all_rounded,
                                                               size: 32.0,
@@ -386,14 +382,14 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 FFButtonOptions(
                                                               height: 55.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           32.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -418,13 +414,13 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
+                                                                  const BorderRadius
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
@@ -455,11 +451,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       30.0,
@@ -477,11 +473,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       20.0,
@@ -508,11 +504,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       50.0,
@@ -544,7 +540,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 16.0),
                                                     child:
@@ -556,7 +552,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -566,7 +562,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -574,7 +570,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -600,7 +596,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -623,7 +619,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -649,7 +645,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -667,7 +663,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -699,7 +695,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -762,7 +758,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -772,7 +768,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -780,7 +776,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -806,7 +802,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -829,7 +825,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -855,7 +851,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -873,7 +869,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -905,7 +901,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -968,7 +964,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -978,7 +974,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -986,7 +982,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -1012,7 +1008,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -1035,7 +1031,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -1061,7 +1057,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -1079,7 +1075,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1111,7 +1107,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1174,7 +1170,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -1184,7 +1180,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -1192,7 +1188,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -1218,7 +1214,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -1241,7 +1237,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -1267,7 +1263,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -1285,7 +1281,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1317,7 +1313,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1380,7 +1376,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -1390,7 +1386,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -1398,7 +1394,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -1424,7 +1420,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -1447,7 +1443,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -1473,7 +1469,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -1491,7 +1487,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1523,7 +1519,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1586,7 +1582,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -1596,7 +1592,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               width: double
                                                                   .infinity,
                                                               constraints:
-                                                                  BoxConstraints(
+                                                                  const BoxConstraints(
                                                                 minHeight: 70.0,
                                                               ),
                                                               decoration:
@@ -1604,7 +1600,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         7.0,
@@ -1630,7 +1626,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -1653,7 +1649,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             8.0,
@@ -1679,7 +1675,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 random_data.randomDate().toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -1697,7 +1693,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1729,7 +1725,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
@@ -1796,11 +1792,11 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(16.0),
+                                                          const EdgeInsets.all(16.0),
                                                       child: Text(
                                                         'پاکسازی ناموفق لیست وجود ندارد.',
                                                         style:
@@ -1832,8 +1828,8 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -1846,7 +1842,7 @@ class _BulkWidgetState extends State<BulkWidget> with TickerProviderStateMixin {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 2,
                               ),
                             ),

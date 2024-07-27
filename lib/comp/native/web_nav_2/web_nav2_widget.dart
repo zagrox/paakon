@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'web_nav2_model.dart';
 export 'web_nav2_model.dart';
 
@@ -49,14 +46,14 @@ class _WebNav2WidgetState extends State<WebNav2Widget> {
           BoxShadow(
             blurRadius: 0.0,
             color: FlutterFlowTheme.of(context).lineColor,
-            offset: Offset(
+            offset: const Offset(
               1.0,
               0.0,
             ),
           )
         ],
       ),
-      child: Padding(
+      child: const Padding(
         padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,

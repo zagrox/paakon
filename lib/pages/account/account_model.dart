@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/comp/dashboard/folders/folders_widget.dart';
 import '/comp/dashboard/icons_dashboard/icons_dashboard_widget.dart';
 import '/comp/dashboard/start_now/start_now_widget.dart';
@@ -6,15 +5,9 @@ import '/comp/general/contact/contact_widget.dart';
 import '/comp/nav/mobile_nav/mobile_nav_widget.dart';
 import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'account_widget.dart' show AccountWidget;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class AccountModel extends FlutterFlowModel<AccountWidget> {
   ///  Local state fields for this page.

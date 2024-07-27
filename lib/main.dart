@@ -1,5 +1,4 @@
 import 'package:provider/provider.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,9 +11,6 @@ import '/backend/supabase/supabase.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'flutter_flow/nav/nav.dart';
-import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,11 +26,13 @@ void main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: MyApp(),
+    child: const MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -83,7 +81,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Paakon',
-      localizationsDelegates: [
+      localizationsDelegates: const [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

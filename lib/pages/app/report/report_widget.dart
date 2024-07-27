@@ -5,15 +5,10 @@ import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'report_model.dart';
 export 'report_model.dart';
 
@@ -81,10 +76,10 @@ class _ReportWidgetState extends State<ReportWidget> {
   @override
   Widget build(BuildContext context) {
     final chartPieChartColorsList = [
-      Color(0xFF8F46E9),
-      Color(0xFF6F28CB),
-      Color(0xFF2536A4),
-      Color(0xFF4A57C1)
+      const Color(0xFF8F46E9),
+      const Color(0xFF6F28CB),
+      const Color(0xFF2536A4),
+      const Color(0xFF4A57C1)
     ];
     return Title(
         title: 'report',
@@ -107,11 +102,11 @@ class _ReportWidgetState extends State<ReportWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 7,
                         ),
                       ),
@@ -127,14 +122,14 @@ class _ReportWidgetState extends State<ReportWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -148,7 +143,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -175,7 +170,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'ایمیل',
                                                   style: TextStyle(),
                                                 )
@@ -208,19 +203,19 @@ class _ReportWidgetState extends State<ReportWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 12.0))
-                                            .addToStart(SizedBox(width: 24.0))
-                                            .addToEnd(SizedBox(width: 8.0)),
+                                            .divide(const SizedBox(width: 12.0))
+                                            .addToStart(const SizedBox(width: 24.0))
+                                            .addToEnd(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Flexible(
                                       flex: 1,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 1005.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -238,8 +233,8 @@ class _ReportWidgetState extends State<ReportWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(16.0),
-                                                child: Container(
+                                                padding: const EdgeInsets.all(16.0),
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   height: 400.0,
                                                   child: custom_widgets
@@ -258,9 +253,9 @@ class _ReportWidgetState extends State<ReportWidget> {
                                       ),
                                     ),
                                     Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: Wrap(
                                           spacing: 0.0,
@@ -275,11 +270,11 @@ class _ReportWidgetState extends State<ReportWidget> {
                                           clipBehavior: Clip.none,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 500.0,
                                                 height: 80.0,
-                                                constraints: BoxConstraints(
+                                                constraints: const BoxConstraints(
                                                   maxWidth: double.infinity,
                                                 ),
                                                 decoration: BoxDecoration(
@@ -296,7 +291,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Row(
@@ -305,7 +300,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -356,7 +351,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -379,7 +374,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -395,7 +390,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -423,7 +418,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
+                                                      const Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -449,11 +444,11 @@ class _ReportWidgetState extends State<ReportWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 500.0,
                                                 height: 80.0,
-                                                constraints: BoxConstraints(
+                                                constraints: const BoxConstraints(
                                                   maxWidth: double.infinity,
                                                 ),
                                                 decoration: BoxDecoration(
@@ -470,14 +465,14 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Padding(
+                                                      const Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
@@ -529,7 +524,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -551,7 +546,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                Padding(
+                                                                const Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
@@ -567,7 +562,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -595,7 +590,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
+                                                      const Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -621,11 +616,11 @@ class _ReportWidgetState extends State<ReportWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 500.0,
                                                 height: 80.0,
-                                                constraints: BoxConstraints(
+                                                constraints: const BoxConstraints(
                                                   maxWidth: double.infinity,
                                                 ),
                                                 decoration: BoxDecoration(
@@ -642,7 +637,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Row(
@@ -651,7 +646,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -701,7 +696,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -724,7 +719,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -740,7 +735,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -768,7 +763,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
+                                                      const Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -794,11 +789,11 @@ class _ReportWidgetState extends State<ReportWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 500.0,
                                                 height: 80.0,
-                                                constraints: BoxConstraints(
+                                                constraints: const BoxConstraints(
                                                   maxWidth: double.infinity,
                                                 ),
                                                 decoration: BoxDecoration(
@@ -815,7 +810,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Row(
@@ -824,7 +819,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -874,7 +869,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -897,7 +892,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -913,7 +908,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -941,7 +936,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
+                                                      const Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -973,12 +968,12 @@ class _ReportWidgetState extends State<ReportWidget> {
                                     Flexible(
                                       flex: 1,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           height: 300.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 1005.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -993,7 +988,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: Stack(
                                               children: [
                                                 FlutterFlowPieChart(
@@ -1009,7 +1004,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                         chartPieChartColorsList,
                                                     radius: [100.0],
                                                     borderColor: [
-                                                      Color(0x00000000)
+                                                      const Color(0x00000000)
                                                     ],
                                                   ),
                                                   donutHoleRadius: 20.0,
@@ -1034,7 +1029,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child:
                                                       FlutterFlowChartLegendWidget(
@@ -1072,9 +1067,9 @@ class _ReportWidgetState extends State<ReportWidget> {
                                                           useGoogleFonts: false,
                                                         ),
                                                     textPadding:
-                                                        EdgeInsets.all(4.0),
+                                                        const EdgeInsets.all(4.0),
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 8.0,
                                                                 8.0, 8.0),
                                                     borderWidth: 1.0,
@@ -1088,8 +1083,8 @@ class _ReportWidgetState extends State<ReportWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -1102,7 +1097,7 @@ class _ReportWidgetState extends State<ReportWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 7,
                               ),
                             ),

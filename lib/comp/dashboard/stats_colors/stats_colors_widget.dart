@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'stats_colors_model.dart';
 export 'stats_colors_model.dart';
 
@@ -57,7 +54,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +66,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '56.4k',
                       textAlign: TextAlign.center,
@@ -83,7 +80,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'تعداد ایمیل',
                       textAlign: TextAlign.center,
@@ -115,7 +112,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -127,7 +124,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '24.8k',
                       textAlign: TextAlign.center,
@@ -141,7 +138,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'ایمیل پاکیزه',
                       textAlign: TextAlign.center,
@@ -172,7 +169,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -184,7 +181,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '16.4k',
                       textAlign: TextAlign.center,
@@ -198,7 +195,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'ایمیل نامعتبر',
                       textAlign: TextAlign.center,
@@ -218,7 +215,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
             ),
           ),
         ),
-      ].divide(SizedBox(width: 12.0)),
+      ].divide(const SizedBox(width: 12.0)),
     );
   }
 }

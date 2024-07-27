@@ -2,12 +2,9 @@ import '/backend/supabase/supabase.dart';
 import '/comp/nav/web_bar/web_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'blog_model.dart';
 export 'blog_model.dart';
 
@@ -62,7 +59,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                   wrapWithModel(
                     model: _model.webBarModel,
                     updateCallback: () => setState(() {}),
-                    child: WebBarWidget(),
+                    child: const WebBarWidget(),
                   ),
                   Container(
                     width: double.infinity,
@@ -77,14 +74,14 @@ class _BlogWidgetState extends State<BlogWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 44.0, 24.0, 32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -95,7 +92,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                   context.pushNamed(
                                     'newBlog',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -122,7 +119,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                   .labelMedium
                                   .override(
                                     fontFamily: 'Peyda',
-                                    color: Color(0xBEFFFFFF),
+                                    color: const Color(0xBEFFFFFF),
                                     letterSpacing: 0.0,
                                     useGoogleFonts: false,
                                   ),
@@ -130,9 +127,9 @@ class _BlogWidgetState extends State<BlogWidget> {
                             Opacity(
                               opacity: 0.5,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
-                                child: Container(
+                                child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller:
@@ -150,7 +147,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                             useGoogleFonts: false,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -188,7 +185,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               24.0, 24.0, 0.0, 24.0),
                                       prefixIcon: Icon(
                                         Icons.search_rounded,
@@ -218,7 +215,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 52.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 52.0),
                     child: FutureBuilder<List<BlogRow>>(
                       future: BlogTable().queryRows(
                         queryFn: (q) => q,
@@ -246,14 +243,14 @@ class _BlogWidgetState extends State<BlogWidget> {
                             final columnBlogRow =
                                 columnBlogRowList[columnIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 3.0,
                                       color: Color(0x411D2429),
@@ -266,14 +263,14 @@ class _BlogWidgetState extends State<BlogWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 1.0, 1.0, 1.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -287,7 +284,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -308,7 +305,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                             ),
-                                            Icon(
+                                            const Icon(
                                               Icons.chevron_right_rounded,
                                               color: Color(0xFF57636C),
                                               size: 24.0,
@@ -317,7 +314,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 8.0, 0.0),
                                         child: AutoSizeText(
                                           valueOrDefault<String>(
@@ -338,7 +335,7 @@ class _BlogWidgetState extends State<BlogWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 8.0, 0.0),
                                         child: AutoSizeText(
                                           valueOrDefault<String>(

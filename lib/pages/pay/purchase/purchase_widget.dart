@@ -4,11 +4,7 @@ import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'purchase_model.dart';
 export 'purchase_model.dart';
 
@@ -62,11 +58,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 8,
                         ),
                       ),
@@ -82,14 +78,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -103,7 +99,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -130,7 +126,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'اعتبار',
                                                   style: TextStyle(),
                                                 )
@@ -163,13 +159,13 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 12.0))
-                                            .addToStart(SizedBox(width: 24.0))
-                                            .addToEnd(SizedBox(width: 8.0)),
+                                            .divide(const SizedBox(width: 12.0))
+                                            .addToStart(const SizedBox(width: 24.0))
+                                            .addToEnd(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -182,7 +178,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -281,7 +277,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -310,7 +306,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -321,7 +317,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -394,7 +390,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -412,14 +408,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -489,7 +485,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -500,7 +496,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -576,14 +572,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -653,7 +649,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -664,7 +660,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -740,14 +736,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -817,7 +813,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -828,7 +824,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -904,14 +900,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -981,7 +977,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -992,7 +988,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -1068,14 +1064,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1145,7 +1141,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -1156,7 +1152,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -1232,14 +1228,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1309,7 +1305,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -1320,7 +1316,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -1396,14 +1392,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1473,7 +1469,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -1484,7 +1480,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -1560,14 +1556,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1637,7 +1633,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         14.0, 0.0, 14.0, 0.0),
                                                 child: Row(
@@ -1648,7 +1644,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -1724,14 +1720,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                             FFButtonOptions(
                                                           height: 38.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
                                                                       8.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1786,13 +1782,13 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -1805,7 +1801,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 8,
                               ),
                             ),

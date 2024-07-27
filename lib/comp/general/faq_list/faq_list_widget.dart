@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'faq_list_model.dart';
 export 'faq_list_model.dart';
 
@@ -64,7 +61,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +76,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'لیست ایمیل های خود را با سرویس پاکن در چند مرحله اعتبارسنجی کرده و لیست پاک تحویل بگیرید.',
                         style: FlutterFlowTheme.of(context)
@@ -110,7 +107,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +122,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'تعرفه اعتباری بصورت پلکانی بر اساس انتخاب بسته شارژ متفاوت می باشد. نرخ از ۴۹ تا ۹۹ تومان است.',
                         style: FlutterFlowTheme.of(context)
@@ -156,7 +153,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,7 +168,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'عملیات توسط سرویس رسان جهانی و معتبر انجام می گیرید و شامل گارانتی صحت ایمیل ها می باشد.',
                         style: FlutterFlowTheme.of(context)
@@ -202,7 +199,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,7 +214,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'اطلاعات شامل نام کامل و آواتار مرتبط با ایمیل است.',
                         style: FlutterFlowTheme.of(context)
@@ -235,7 +232,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
@@ -250,7 +247,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -265,7 +262,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           'عملیات توسط سرویس رسان جهانی و معتبر انجام می گیرید و شامل گارانتی صحت ایمیل ها می باشد.',
                           style: FlutterFlowTheme.of(context)
@@ -285,7 +282,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
@@ -300,7 +297,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -315,7 +312,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           'اطلاعات شامل نام کامل و آواتار مرتبط با ایمیل است.',
                           style: FlutterFlowTheme.of(context)
@@ -335,7 +332,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
@@ -350,7 +347,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -365,7 +362,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           'عملیات توسط سرویس رسان جهانی و معتبر انجام می گیرید و شامل گارانتی صحت ایمیل ها می باشد.',
                           style: FlutterFlowTheme.of(context)
@@ -384,7 +381,7 @@ class _FaqListWidgetState extends State<FaqListWidget> {
                 ),
               ),
             ),
-          ].divide(SizedBox(height: 8.0)).around(SizedBox(height: 8.0)),
+          ].divide(const SizedBox(height: 8.0)).around(const SizedBox(height: 8.0)),
         ),
       ),
     );

@@ -5,9 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'tabs_bar_model.dart';
 export 'tabs_bar_model.dart';
 
@@ -52,7 +49,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,18 +58,18 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
             child: Container(
               width: 100.0,
               height: 100.0,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minHeight: 400.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment(0.0, 0),
+                      alignment: const Alignment(0.0, 0),
                       child: FlutterFlowButtonTabBar(
                         useToggleButtonStyle: true,
                         labelStyle:
@@ -83,7 +80,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: false,
                                 ),
-                        unselectedLabelStyle: TextStyle(),
+                        unselectedLabelStyle: const TextStyle(),
                         labelColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
                         unselectedLabelColor:
@@ -99,9 +96,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                         borderRadius: 8.0,
                         elevation: 0.0,
                         buttonMargin:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                        padding: EdgeInsets.all(3.0),
-                        tabs: [
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        padding: const EdgeInsets.all(3.0),
+                        tabs: const [
                           Tab(
                             text: 'در حال پاکسازی',
                           ),
@@ -123,12 +120,12 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                         controller: _model.tabBarController,
                         children: [
                           Stack(
-                            alignment: AlignmentDirectional(-0.0, 0.0),
+                            alignment: const AlignmentDirectional(-0.0, 0.0),
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.signal_cellular_no_sim_outlined,
@@ -139,7 +136,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 50.0),
                                 child: Text(
                                   'فایل شامل لیست ایمیل های خود را انتخاب کنید',
@@ -153,7 +150,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   '(مشاهده نمونه فایل)',
                                   style: FlutterFlowTheme.of(context)
@@ -169,9 +166,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 48.0, 0.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
@@ -180,10 +177,10 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     text: 'آپلود لیست',
                                     options: FFButtonOptions(
                                       height: 44.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -197,7 +194,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                             useGoogleFonts: false,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -212,14 +209,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 28.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -236,7 +233,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -250,7 +247,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -278,7 +275,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -307,7 +304,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -330,7 +327,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -374,14 +371,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -398,7 +395,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -412,7 +409,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -440,7 +437,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -469,7 +466,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -492,7 +489,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -536,14 +533,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -560,7 +557,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -574,7 +571,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -602,7 +599,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -631,7 +628,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -654,7 +651,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -700,9 +697,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                             ],
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 'فایل در حال پاکسازی وجود ندارد. لیست خود را انتخاب کنید.',
                                 style: FlutterFlowTheme.of(context)

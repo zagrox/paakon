@@ -5,12 +5,7 @@ import '/comp/verify/enrich_search/enrich_search_widget.dart';
 import '/comp/verify/table_enrich_results/table_enrich_results_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'data_model.dart';
 export 'data_model.dart';
 
@@ -64,11 +59,11 @@ class _DataWidgetState extends State<DataWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 4,
                         ),
                       ),
@@ -84,14 +79,14 @@ class _DataWidgetState extends State<DataWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -105,7 +100,7 @@ class _DataWidgetState extends State<DataWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -132,7 +127,7 @@ class _DataWidgetState extends State<DataWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'ایمیل',
                                                   style: TextStyle(),
                                                 )
@@ -165,33 +160,33 @@ class _DataWidgetState extends State<DataWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 12.0))
-                                            .addToStart(SizedBox(width: 24.0))
-                                            .addToEnd(SizedBox(width: 8.0)),
+                                            .divide(const SizedBox(width: 12.0))
+                                            .addToStart(const SizedBox(width: 24.0))
+                                            .addToEnd(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: wrapWithModel(
                                         model: _model.enrichSearchModel,
                                         updateCallback: () => setState(() {}),
-                                        child: EnrichSearchWidget(),
+                                        child: const EnrichSearchWidget(),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: wrapWithModel(
                                           model: _model.tableEnrichResultsModel,
                                           updateCallback: () => setState(() {}),
-                                          child: TableEnrichResultsWidget(),
+                                          child: const TableEnrichResultsWidget(),
                                         ),
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -204,7 +199,7 @@ class _DataWidgetState extends State<DataWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 4,
                               ),
                             ),

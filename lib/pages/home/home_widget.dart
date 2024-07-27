@@ -4,12 +4,8 @@ import '/comp/nav/web_bar/web_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -60,20 +56,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                 wrapWithModel(
                   model: _model.webBarModel,
                   updateCallback: () => setState(() {}),
-                  child: WebBarWidget(),
+                  child: const WebBarWidget(),
                 ),
                 Expanded(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
                               width: double.infinity,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Wrap(
                                 spacing: 0.0,
                                 runSpacing: 0.0,
@@ -91,7 +87,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 30.0, 0.0, 10.0),
                                         child: Text(
                                           'ابزار اعتبارسنجی ایمیل؛\nساده، سریع و دقیق',
@@ -120,7 +116,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 30.0, 0.0, 15.0),
                                         child: FFButtonWidget(
                                           onPressed: () {
@@ -130,10 +126,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           options: FFButtonOptions(
                                             height: 50.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -147,7 +143,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -172,7 +168,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Lottie.asset(
                                       'assets/lottie_animations/email-steps.json',
                                       width: 360.0,
@@ -186,13 +182,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Container(
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 maxWidth: 1440.0,
                               ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(16.0),
@@ -203,14 +199,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 25.0, 0.0, 25.0),
                                     child: Container(
                                       width: double.infinity,
-                                      constraints: BoxConstraints(
+                                      constraints: const BoxConstraints(
                                         maxHeight: 200.0,
                                       ),
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -230,17 +226,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground
                                                   ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
+                                                  stops: const [0.0, 1.0],
+                                                  begin: const AlignmentDirectional(
                                                       0.0, -1.0),
-                                                  end: AlignmentDirectional(
+                                                  end: const AlignmentDirectional(
                                                       0, 1.0),
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -258,7 +254,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -284,7 +280,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -328,17 +324,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground
                                                   ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
+                                                  stops: const [0.0, 1.0],
+                                                  begin: const AlignmentDirectional(
                                                       0.0, -1.0),
-                                                  end: AlignmentDirectional(
+                                                  end: const AlignmentDirectional(
                                                       0, 1.0),
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -355,7 +351,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -381,7 +377,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -425,17 +421,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground
                                                   ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
+                                                  stops: const [0.0, 1.0],
+                                                  begin: const AlignmentDirectional(
                                                       0.0, -1.0),
-                                                  end: AlignmentDirectional(
+                                                  end: const AlignmentDirectional(
                                                       0, 1.0),
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -452,7 +448,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -478,7 +474,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -511,8 +507,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 20.0))
-                                            .around(SizedBox(width: 20.0)),
+                                            .divide(const SizedBox(width: 20.0))
+                                            .around(const SizedBox(width: 20.0)),
                                       ),
                                     ),
                                   ),
@@ -522,11 +518,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     tablet: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsets.all(10.0),
+                                      padding: const EdgeInsets.all(10.0),
                                       child: Container(
                                         width: double.infinity,
                                         height: 170.0,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                           maxWidth: 1440.0,
                                         ),
                                         decoration: BoxDecoration(
@@ -561,7 +557,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  TextSpan(
+                                                  const TextSpan(
                                                     text: 'چگونه کار می کند؟',
                                                     style: TextStyle(),
                                                   )
@@ -610,16 +606,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 12.0)),
+                                          ].divide(const SizedBox(width: 12.0)),
                                         ),
                                       ),
                                     ),
                                   Container(
                                     width: double.infinity,
                                     height: 300.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Padding(
-                                      padding: EdgeInsets.all(18.0),
+                                      padding: const EdgeInsets.all(18.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -643,7 +639,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           Expanded(
                                             flex: 2,
                                             child: Padding(
-                                              padding: EdgeInsets.all(18.0),
+                                              padding: const EdgeInsets.all(18.0),
                                               child: Text(
                                                 'اجازه ندهید ایمیل‌های یکبار مصرف، اسپم و غیرفعال‌شده اعتبار ارسال شما را کاهش دهند و  زمان و پول شما را از هدر دهند. 30 درصد ایمیل ها فقط در یکسال خراب می شوند. اگر بیش از 10٪ از ایمیلهای شما بد باشد، کمتر از 44٪ تحویل داده می شود. از ابزار تأیید ایمیل انبوه پاکن برای حذف هر گونه ایمیل بد استفاده کنید.',
                                                 textAlign: TextAlign.start,
@@ -668,13 +664,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: wrapWithModel(
                                         model: _model.startNowModel,
                                         updateCallback: () => setState(() {}),
-                                        child: StartNowWidget(),
+                                        child: const StartNowWidget(),
                                       ),
                                     ),
                                   ),
@@ -695,7 +691,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   wrapWithModel(
                     model: _model.mobileNavModel,
                     updateCallback: () => setState(() {}),
-                    child: MobileNavWidget(
+                    child: const MobileNavWidget(
                       selectnav: 1,
                     ),
                   ),

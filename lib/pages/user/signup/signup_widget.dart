@@ -1,19 +1,13 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'signup_model.dart';
 export 'signup_model.dart';
 
@@ -66,8 +60,8 @@ class _SignupWidgetState extends State<SignupWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, -14.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -14.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -106,17 +100,17 @@ class _SignupWidgetState extends State<SignupWidget>
                   children: [
                     Container(
                       height: 110.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(4.0),
                                 child: Image.asset(
@@ -128,7 +122,7 @@ class _SignupWidgetState extends State<SignupWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -168,7 +162,7 @@ class _SignupWidgetState extends State<SignupWidget>
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
@@ -183,10 +177,10 @@ class _SignupWidgetState extends State<SignupWidget>
                             children: [
                               if (!loggedIn)
                                 Padding(
-                                  padding: EdgeInsets.all(24.0),
+                                  padding: const EdgeInsets.all(24.0),
                                   child: Container(
                                     width: double.infinity,
-                                    constraints: BoxConstraints(
+                                    constraints: const BoxConstraints(
                                       maxWidth: 500.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -200,14 +194,14 @@ class _SignupWidgetState extends State<SignupWidget>
                                           CrossAxisAlignment.center,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: Text(
                                                   'ثبت نام با حساب گوگل',
                                                   style: FlutterFlowTheme.of(
@@ -225,7 +219,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -264,7 +258,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      boxShadow: [
+                                                      boxShadow: const [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
                                                           color:
@@ -284,7 +278,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                     ),
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: FaIcon(
                                                       FontAwesomeIcons.google,
@@ -303,7 +297,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -346,7 +340,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -354,7 +348,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -363,7 +357,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -375,7 +369,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -393,7 +387,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -435,7 +429,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -443,7 +437,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -452,7 +446,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -464,7 +458,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -482,7 +476,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -525,7 +519,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -533,7 +527,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -542,7 +536,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -554,7 +548,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -572,7 +566,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -615,7 +609,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -623,7 +617,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -632,7 +626,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -644,7 +638,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -662,7 +656,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -705,7 +699,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -713,7 +707,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -722,7 +716,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -734,7 +728,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -752,7 +746,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -795,7 +789,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -803,7 +797,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -812,7 +806,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -824,7 +818,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -842,7 +836,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -885,7 +879,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -893,7 +887,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -902,7 +896,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -914,7 +908,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsetsDirectional
+                                                  const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -932,7 +926,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 20.0, 4.0, 14.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -946,7 +940,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .text) {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
-                                                  SnackBar(
+                                                  const SnackBar(
                                                     content: Text(
                                                       'Passwords don\'t match!',
                                                     ),
@@ -1018,7 +1012,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -1032,7 +1026,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 context.mounted,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -1046,9 +1040,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 60.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 4.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1082,14 +1076,14 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 16.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
                                                 .textScaler,
                                             text: TextSpan(
                                               children: [
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'کاربر قبلی هستید؟ ',
                                                   style: TextStyle(),
                                                 ),
@@ -1122,7 +1116,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 8.0)),
                                     ),
                                   ),
                                 ),
@@ -1131,7 +1125,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 12.0),
                                       child: Text(
                                         'شما هم اکنون کاربر پاکن هستید.',
@@ -1151,10 +1145,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                       text: 'مشاهده داشبورد کاربری',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1167,7 +1161,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               useGoogleFonts: false,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1175,11 +1169,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                             BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 12.0)),
+                                  ].divide(const SizedBox(height: 12.0)),
                                 ),
                             ]
-                                .divide(SizedBox(height: 8.0))
-                                .around(SizedBox(height: 8.0)),
+                                .divide(const SizedBox(height: 8.0))
+                                .around(const SizedBox(height: 8.0)),
                           ),
                         ),
                       ),

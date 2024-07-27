@@ -4,11 +4,7 @@ import '/comp/nav/web_bar/web_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'new_blog_model.dart';
 export 'new_blog_model.dart';
 
@@ -74,7 +70,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                     wrapWithModel(
                       model: _model.webBarModel,
                       updateCallback: () => setState(() {}),
-                      child: WebBarWidget(),
+                      child: const WebBarWidget(),
                     ),
                     Container(
                       width: double.infinity,
@@ -85,18 +81,18 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                       child: Container(
                         width: 100.0,
                         height: 170.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0x9A0B4861),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 44.0, 24.0, 32.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Text(
                                   'بلاگ پاکن',
@@ -116,7 +112,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Peyda',
-                                      color: Color(0xBEFFFFFF),
+                                      color: const Color(0xBEFFFFFF),
                                       letterSpacing: 0.0,
                                       useGoogleFonts: false,
                                     ),
@@ -124,9 +120,9 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                               Opacity(
                                 opacity: 0.7,
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller:
@@ -184,7 +180,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 24.0, 24.0, 0.0, 24.0),
                                         prefixIcon: Icon(
                                           Icons.search_rounded,
@@ -213,7 +209,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -235,7 +231,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                         useGoogleFonts: false,
                                       ),
                                 ),
-                                TextSpan(
+                                const TextSpan(
                                   text: ' جدید',
                                   style: TextStyle(),
                                 )
@@ -257,7 +253,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.blogNewTitleTextController,
@@ -292,21 +288,21 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
@@ -316,7 +312,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 24.0, 0.0, 24.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -332,7 +328,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -368,21 +364,21 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
@@ -392,7 +388,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 24.0, 0.0, 24.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -408,7 +404,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -444,21 +440,21 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(40.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2.0,
                                       ),
@@ -468,7 +464,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 24.0, 0.0, 24.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -485,7 +481,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 24.0, 4.0, 8.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -504,7 +500,7 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                     context.pushNamed(
                                       'blog',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -517,9 +513,9 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 4.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -541,13 +537,13 @@ class _NewBlogWidgetState extends State<NewBlogWidget> {
                                 ),
                               ),
                             ]
-                                .divide(SizedBox(height: 8.0))
-                                .addToStart(SizedBox(height: 8.0))
-                                .addToEnd(SizedBox(height: 8.0)),
+                                .divide(const SizedBox(height: 8.0))
+                                .addToStart(const SizedBox(height: 8.0))
+                                .addToEnd(const SizedBox(height: 8.0)),
                           ),
                         ]
-                            .divide(SizedBox(height: 8.0))
-                            .around(SizedBox(height: 8.0)),
+                            .divide(const SizedBox(height: 8.0))
+                            .around(const SizedBox(height: 8.0)),
                       ),
                     ),
                   ],

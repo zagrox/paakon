@@ -9,7 +9,7 @@ class BlogTable extends SupabaseTable<BlogRow> {
 }
 
 class BlogRow extends SupabaseDataRow {
-  BlogRow(Map<String, dynamic> data) : super(data);
+  BlogRow(super.data);
 
   @override
   SupabaseTable get table => BlogTable();

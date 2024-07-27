@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'remain_credits_model.dart';
 export 'remain_credits_model.dart';
 
@@ -44,7 +41,7 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
       height: 55.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(60.0),
           topLeft: Radius.circular(0.0),
@@ -52,14 +49,14 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
               child: Text(
                 'مانده اعتبار',
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -72,7 +69,7 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
             ),
             Flexible(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: Text(
                   '1820',
                   textAlign: TextAlign.end,
@@ -87,7 +84,7 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Icon(
                 Icons.add,
                 color: FlutterFlowTheme.of(context).accent2,

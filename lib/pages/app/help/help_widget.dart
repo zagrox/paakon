@@ -5,12 +5,7 @@ import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'help_model.dart';
 export 'help_model.dart';
 
@@ -64,11 +59,11 @@ class _HelpWidgetState extends State<HelpWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 9,
                         ),
                       ),
@@ -84,14 +79,14 @@ class _HelpWidgetState extends State<HelpWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -105,7 +100,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -132,7 +127,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'پاکن',
                                                   style: TextStyle(),
                                                 )
@@ -151,30 +146,30 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                       ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 12.0)),
+                                        ].divide(const SizedBox(width: 12.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: wrapWithModel(
                                           model: _model.contactModel,
                                           updateCallback: () => setState(() {}),
-                                          child: ContactWidget(),
+                                          child: const ContactWidget(),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           14.0, 8.0, 14.0, 0.0),
                                       child: Container(
                                         height: 70.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -193,7 +188,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -205,7 +200,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                 size: 28.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -227,11 +222,11 @@ class _HelpWidgetState extends State<HelpWidget> {
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Icon(
@@ -251,20 +246,20 @@ class _HelpWidgetState extends State<HelpWidget> {
                                       ),
                                     ),
                                     Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: wrapWithModel(
                                           model: _model.faqListModel,
                                           updateCallback: () => setState(() {}),
-                                          child: FaqListWidget(),
+                                          child: const FaqListWidget(),
                                         ),
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -277,7 +272,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 9,
                               ),
                             ),

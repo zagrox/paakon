@@ -2,13 +2,9 @@ import '/comp/account/profile_avatar/profile_avatar_widget.dart';
 import '/comp/general/breadcrumb/breadcrumb_widget.dart';
 import '/comp/general/mode/mode_widget.dart';
 import '/comp/general/remain_credits/remain_credits_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'top_bar_widget.dart' show TopBarWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class TopBarModel extends FlutterFlowModel<TopBarWidget> {
   ///  State fields for stateful widgets in this component.

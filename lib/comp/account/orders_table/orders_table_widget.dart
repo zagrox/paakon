@@ -2,9 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'orders_table_model.dart';
 export 'orders_table_model.dart';
 
@@ -42,19 +39,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: 40.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(8.0),
@@ -62,7 +59,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -172,7 +169,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -198,13 +195,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -262,7 +259,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                             context.pushNamed(
                               'transaction',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -290,7 +287,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -316,13 +313,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '5.000',
@@ -390,7 +387,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -416,13 +413,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '100.000',
@@ -490,7 +487,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -516,13 +513,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -590,7 +587,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -616,13 +613,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -690,7 +687,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -716,13 +713,13 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',

@@ -2,9 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'user_details_model.dart';
 export 'user_details_model.dart';
 
@@ -42,13 +39,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(0.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 8.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +65,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'نام حساب:',
                           style:
@@ -94,9 +91,9 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               4.0, 0.0, 4.0, 0.0),
                           child: Icon(
                             Icons.verified_outlined,
@@ -113,7 +110,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                     color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,7 +141,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,7 +172,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -206,7 +203,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -239,7 +236,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(height: 2.0)),
+                ].divide(const SizedBox(height: 2.0)),
               ),
             ],
           ),

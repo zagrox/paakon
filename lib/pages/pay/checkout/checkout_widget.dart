@@ -5,11 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'checkout_model.dart';
 export 'checkout_model.dart';
 
@@ -63,11 +59,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 8,
                         ),
                       ),
@@ -83,14 +79,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -104,7 +100,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -131,7 +127,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'سفارش',
                                                   style: TextStyle(),
                                                 )
@@ -168,13 +164,13 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(width: 12.0))
-                                            .addToStart(SizedBox(width: 24.0))
-                                            .addToEnd(SizedBox(width: 8.0)),
+                                            .divide(const SizedBox(width: 12.0))
+                                            .addToStart(const SizedBox(width: 24.0))
+                                            .addToEnd(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -189,13 +185,13 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 8.0, 16.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 1.0, 1.0, 1.0),
                                                 child: ClipRRect(
@@ -213,7 +209,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               Expanded(
                                                 flex: 3,
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: Column(
@@ -228,7 +224,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: RichText(
                                                           textScaler:
@@ -280,11 +276,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -297,7 +293,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .textScaler,
                                                             text: TextSpan(
                                                               children: [
-                                                                TextSpan(
+                                                                const TextSpan(
                                                                   text:
                                                                       'نرخ شارژ: ',
                                                                   style:
@@ -315,7 +311,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                             .bold,
                                                                   ),
                                                                 ),
-                                                                TextSpan(
+                                                                const TextSpan(
                                                                   text:
                                                                       ' تومان',
                                                                   style:
@@ -342,7 +338,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.7),
                                                 child: RichText(
                                                   textScaler:
@@ -361,7 +357,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                           fontSize: 18.0,
                                                         ),
                                                       ),
-                                                      TextSpan(
+                                                      const TextSpan(
                                                         text: ' تومان',
                                                         style: TextStyle(),
                                                       )
@@ -387,7 +383,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -402,14 +398,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 18.0, 8.0, 8.0),
                                                 child: InkWell(
@@ -480,7 +476,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                 ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                 ),
                                               ),
@@ -492,7 +488,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         .lineColor,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: Column(
@@ -503,7 +499,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -554,7 +550,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -605,7 +601,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -672,7 +668,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                               useGoogleFonts: false,
                                                                             ),
                                                                       ),
-                                                                      duration: Duration(
+                                                                      duration: const Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -716,14 +712,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
                                             'transaction',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -734,7 +730,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           );
                                         },
                                         text: 'پرداخت اینترنتی',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.shopping_cart_outlined,
                                           size: 24.0,
                                         ),
@@ -742,10 +738,10 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           width: double.infinity,
                                           height: 66.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -761,7 +757,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 useGoogleFonts: false,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -771,8 +767,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .around(SizedBox(height: 8.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .around(const SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -785,7 +781,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 8,
                               ),
                             ),

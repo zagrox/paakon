@@ -1,12 +1,6 @@
-import '/backend/gemini/gemini.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'ai_widget.dart' show AiWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class AiModel extends FlutterFlowModel<AiWidget> {
   ///  State fields for stateful widgets in this page.

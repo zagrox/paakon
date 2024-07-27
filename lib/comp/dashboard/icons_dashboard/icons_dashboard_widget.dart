@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'icons_dashboard_model.dart';
 export 'icons_dashboard_model.dart';
 
@@ -41,10 +38,10 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: double.infinity,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -62,7 +59,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -75,7 +72,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.snippet_folder,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -111,7 +108,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -124,7 +121,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_special,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -160,7 +157,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -173,7 +170,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_shared,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -209,7 +206,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -222,7 +219,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.create_new_folder,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -244,7 +241,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
               ),
             ),
           ),
-        ].divide(SizedBox(width: 12.0)),
+        ].divide(const SizedBox(width: 12.0)),
       ),
     );
   }

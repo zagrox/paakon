@@ -1,9 +1,5 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'logo_mobile_model.dart';
 export 'logo_mobile_model.dart';
 
@@ -43,7 +39,7 @@ class _LogoMobileWidgetState extends State<LogoMobileWidget> {
     return Container(
       width: 55.0,
       height: 55.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),

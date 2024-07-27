@@ -2,11 +2,8 @@ import '/comp/account/profile_avatar/profile_avatar_widget.dart';
 import '/comp/general/breadcrumb/breadcrumb_widget.dart';
 import '/comp/general/mode/mode_widget.dart';
 import '/comp/general/remain_credits/remain_credits_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'top_bar_model.dart';
 export 'top_bar_model.dart';
@@ -47,17 +44,17 @@ class _TopBarWidgetState extends State<TopBarWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(1.0, -1.0),
+      alignment: const AlignmentDirectional(1.0, -1.0),
       child: Container(
         height: 110.0,
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             if (FFAppState().navOpen == true)
               Expanded(
                 child: Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Visibility(
                     visible: responsiveVisibility(
                       context: context,
@@ -67,7 +64,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                     child: wrapWithModel(
                       model: _model.breadcrumbModel,
                       updateCallback: () => setState(() {}),
-                      child: BreadcrumbWidget(),
+                      child: const BreadcrumbWidget(),
                     ),
                   ),
                 ),
@@ -75,19 +72,19 @@ class _TopBarWidgetState extends State<TopBarWidget> {
             wrapWithModel(
               model: _model.modeModel,
               updateCallback: () => setState(() {}),
-              child: ModeWidget(),
+              child: const ModeWidget(),
             ),
             wrapWithModel(
               model: _model.profileAvatarModel,
               updateCallback: () => setState(() {}),
-              child: ProfileAvatarWidget(),
+              child: const ProfileAvatarWidget(),
             ),
             wrapWithModel(
               model: _model.remainCreditsModel,
               updateCallback: () => setState(() {}),
-              child: RemainCreditsWidget(),
+              child: const RemainCreditsWidget(),
             ),
-          ].divide(SizedBox(width: 10.0)),
+          ].divide(const SizedBox(width: 10.0)),
         ),
       ),
     );

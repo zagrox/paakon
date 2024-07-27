@@ -3,15 +3,9 @@ import '/comp/account/orders_table/orders_table_widget.dart';
 import '/comp/nav/mobile_nav/mobile_nav_widget.dart';
 import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'history_widget.dart' show HistoryWidget;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class HistoryModel extends FlutterFlowModel<HistoryWidget> {
   ///  State fields for stateful widgets in this page.

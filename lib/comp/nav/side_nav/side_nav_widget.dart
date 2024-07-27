@@ -1,13 +1,8 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'side_nav_model.dart';
 export 'side_nav_model.dart';
@@ -84,7 +79,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
         tablet: false,
       ),
       child: Align(
-        alignment: AlignmentDirectional(-1.0, 0.0),
+        alignment: const AlignmentDirectional(-1.0, 0.0),
         child: Container(
           width: FFAppState().navOpen ? 240.0 : 65.0,
           decoration: BoxDecoration(
@@ -103,11 +98,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                   context.pushNamed('Account');
                 },
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
+                  duration: const Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 90.0,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minWidth: 110.0,
                   ),
                   decoration: BoxDecoration(
@@ -132,7 +127,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       if (FFAppState().navOpen == true)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -156,7 +151,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(
+                                    const TextSpan(
                                       text: 'خدمات',
                                       style: TextStyle(),
                                     ),
@@ -167,7 +162,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             .accent2,
                                       ),
                                     ),
-                                    TextSpan(
+                                    const TextSpan(
                                       text: 'ایمیل',
                                       style: TextStyle(),
                                     )
@@ -193,17 +188,17 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
                       decoration: BoxDecoration(
-                        color: widget!.selectnavr == 1
+                        color: widget.selectnavr == 1
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -213,7 +208,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -226,11 +221,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.flag_outlined,
-                                  color: widget!.selectnavr == 1
+                                  color: widget.selectnavr == 1
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -238,7 +233,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'داشبورد من',
@@ -258,17 +253,17 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
                       decoration: BoxDecoration(
-                        color: widget!.selectnavr == 2
+                        color: widget.selectnavr == 2
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -278,7 +273,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -291,11 +286,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.checklist_rtl,
-                                  color: widget!.selectnavr == 2
+                                  color: widget.selectnavr == 2
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -303,7 +298,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پاکسازی انبوه',
@@ -323,17 +318,17 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
                       decoration: BoxDecoration(
-                        color: widget!.selectnavr == 3
+                        color: widget.selectnavr == 3
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -343,7 +338,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -356,11 +351,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.alternate_email,
-                                  color: widget!.selectnavr == 3
+                                  color: widget.selectnavr == 3
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -368,7 +363,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پاکسازی تکی',
@@ -388,17 +383,17 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
                       decoration: BoxDecoration(
-                        color: widget!.selectnavr == 4
+                        color: widget.selectnavr == 4
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -408,7 +403,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -421,11 +416,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.switch_access_shortcut_add,
-                                  color: widget!.selectnavr == 4
+                                  color: widget.selectnavr == 4
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -433,7 +428,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'کاوش ایمیل',
@@ -454,11 +449,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                   ),
                   if (FFAppState().navOpen == true)
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 20.0, 8.0),
                           child: Text(
                             'حساب کاربری:',
@@ -476,7 +471,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                     ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -486,7 +481,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         context.pushNamed(
                           'profile',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -495,7 +490,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -503,24 +498,24 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: widget!.selectnavr == 6
+                            color: widget.selectnavr == 6
                                 ? FlutterFlowTheme.of(context).accent3
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.face_retouching_natural_outlined,
-                                  color: widget!.selectnavr == 6
+                                  color: widget.selectnavr == 6
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -528,7 +523,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پروفایل',
@@ -548,9 +543,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -558,7 +553,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         borderRadius: BorderRadius.circular(12.0),
                         shape: BoxShape.rectangle,
                         border: Border.all(
-                          color: widget!.selectnavr == 7
+                          color: widget.selectnavr == 7
                               ? FlutterFlowTheme.of(context).lineColor
                               : FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -566,7 +561,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 6.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 6.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -579,11 +574,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.bar_chart_rounded,
-                                  color: widget!.selectnavr == 7
+                                  color: widget.selectnavr == 7
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -591,7 +586,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'گزارشات',
@@ -611,7 +606,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -621,7 +616,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         context.pushNamed('history');
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -629,24 +624,24 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: widget!.selectnavr == 8
+                            color: widget.selectnavr == 8
                                 ? FlutterFlowTheme.of(context).lineColor
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.auto_mode,
-                                  color: widget!.selectnavr == 8
+                                  color: widget.selectnavr == 8
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -654,7 +649,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'سفارشات',
@@ -674,7 +669,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -684,7 +679,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         context.pushNamed(
                           'help',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -693,7 +688,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -701,14 +696,14 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: widget!.selectnavr == 9
+                            color: widget.selectnavr == 9
                                 ? FlutterFlowTheme.of(context).lineColor
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -722,11 +717,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Icon(
                                     Icons.description_outlined,
-                                    color: widget!.selectnavr == 9
+                                    color: widget.selectnavr == 9
                                         ? FlutterFlowTheme.of(context).primary
                                         : FlutterFlowTheme.of(context).accent3,
                                     size: 24.0,
@@ -734,7 +729,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                                 if (FFAppState().navOpen == true)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Text(
                                       'راهنما',
@@ -755,7 +750,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -765,7 +760,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         context.pushNamed(
                           'notification',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -774,7 +769,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -782,24 +777,24 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: widget!.selectnavr == 10
+                            color: widget.selectnavr == 10
                                 ? FlutterFlowTheme.of(context).lineColor
                                 : FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.notifications_none,
-                                  color: widget!.selectnavr == 10
+                                  color: widget.selectnavr == 10
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context).accent3,
                                   size: 24.0,
@@ -808,7 +803,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               if (FFAppState().navOpen == true)
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Text(
                                       'پیام ها',
@@ -828,14 +823,14 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                     ),
                   ),
-                ].divide(SizedBox(height: 4.0)).around(SizedBox(height: 4.0)),
+                ].divide(const SizedBox(height: 4.0)).around(const SizedBox(height: 4.0)),
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 16.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -845,7 +840,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         context.pushNamed(
                           'notification',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -854,7 +849,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -863,7 +858,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 8.0, 8.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -911,7 +906,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -931,7 +926,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,

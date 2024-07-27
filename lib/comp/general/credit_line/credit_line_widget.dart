@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'credit_line_model.dart';
 export 'credit_line_model.dart';
 
@@ -41,7 +38,7 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: 500.0,
         height: 50.0,
@@ -63,7 +60,7 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
               size: 24.0,
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
               child: Text(
                 'مانده اعتبار',
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -88,7 +85,7 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Icon(
                 Icons.add,
                 color: FlutterFlowTheme.of(context).tertiary,

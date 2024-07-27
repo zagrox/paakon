@@ -1,14 +1,8 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'stat_grid_model.dart';
 export 'stat_grid_model.dart';
 
@@ -51,8 +45,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -70,8 +64,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -89,8 +83,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 170.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 170.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -108,8 +102,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -135,15 +129,15 @@ class _StatGridWidgetState extends State<StatGridWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
         child: GridView(
           padding: EdgeInsets.zero,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
@@ -161,7 +155,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -175,7 +169,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '32',
                             style: TextStyle(),
                           ),
@@ -210,7 +204,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(
@@ -223,7 +217,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -237,7 +231,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '17',
                             style: TextStyle(),
                           ),
@@ -288,7 +282,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -302,7 +296,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '12',
                             style: TextStyle(),
                           ),
@@ -338,7 +332,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(
@@ -354,7 +348,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -368,7 +362,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '2',
                             style: TextStyle(),
                           ),
@@ -404,7 +398,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(

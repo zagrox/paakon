@@ -1,24 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 
-import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -83,121 +74,121 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? AccountWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? const AccountWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? AccountWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? const AccountWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'bulk',
           path: '/bulk',
           requireAuth: true,
-          builder: (context, params) => BulkWidget(),
+          builder: (context, params) => const BulkWidget(),
         ),
         FFRoute(
           name: 'single',
           path: '/single',
           requireAuth: true,
-          builder: (context, params) => SingleWidget(),
+          builder: (context, params) => const SingleWidget(),
         ),
         FFRoute(
           name: 'data',
           path: '/data',
           requireAuth: true,
-          builder: (context, params) => DataWidget(),
+          builder: (context, params) => const DataWidget(),
         ),
         FFRoute(
           name: 'Account',
           path: '/account',
           requireAuth: true,
-          builder: (context, params) => AccountWidget(),
+          builder: (context, params) => const AccountWidget(),
         ),
         FFRoute(
           name: 'profile',
           path: '/profile',
           requireAuth: true,
-          builder: (context, params) => ProfileWidget(),
+          builder: (context, params) => const ProfileWidget(),
         ),
         FFRoute(
           name: 'purchase',
           path: '/purchase',
           requireAuth: true,
-          builder: (context, params) => PurchaseWidget(),
+          builder: (context, params) => const PurchaseWidget(),
         ),
         FFRoute(
           name: 'help',
           path: '/help',
           requireAuth: true,
-          builder: (context, params) => HelpWidget(),
+          builder: (context, params) => const HelpWidget(),
         ),
         FFRoute(
           name: 'checkout',
           path: '/checkout',
           requireAuth: true,
-          builder: (context, params) => CheckoutWidget(),
+          builder: (context, params) => const CheckoutWidget(),
         ),
         FFRoute(
           name: 'history',
           path: '/history',
           requireAuth: true,
-          builder: (context, params) => HistoryWidget(),
+          builder: (context, params) => const HistoryWidget(),
         ),
         FFRoute(
           name: 'transaction',
           path: '/transaction',
           requireAuth: true,
-          builder: (context, params) => TransactionWidget(),
+          builder: (context, params) => const TransactionWidget(),
         ),
         FFRoute(
           name: 'signup',
           path: '/signup',
-          builder: (context, params) => SignupWidget(),
+          builder: (context, params) => const SignupWidget(),
         ),
         FFRoute(
           name: 'password',
           path: '/password',
-          builder: (context, params) => PasswordWidget(),
+          builder: (context, params) => const PasswordWidget(),
         ),
         FFRoute(
           name: 'report',
           path: '/report',
           requireAuth: true,
-          builder: (context, params) => ReportWidget(),
+          builder: (context, params) => const ReportWidget(),
         ),
         FFRoute(
           name: 'notification',
           path: '/notification',
           requireAuth: true,
-          builder: (context, params) => NotificationWidget(),
+          builder: (context, params) => const NotificationWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) => const HomeWidget(),
         ),
         FFRoute(
           name: 'welcome',
           path: '/welcome',
-          builder: (context, params) => WelcomeWidget(),
+          builder: (context, params) => const WelcomeWidget(),
         ),
         FFRoute(
           name: 'blog',
           path: '/blog',
-          builder: (context, params) => BlogWidget(),
+          builder: (context, params) => const BlogWidget(),
         ),
         FFRoute(
           name: 'newBlog',
           path: '/newBlog',
           requireAuth: true,
-          builder: (context, params) => NewBlogWidget(),
+          builder: (context, params) => const NewBlogWidget(),
         ),
         FFRoute(
           name: 'edit',
@@ -213,7 +204,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ai',
           path: '/ai',
-          builder: (context, params) => AiWidget(),
+          builder: (context, params) => const AiWidget(),
         ),
         FFRoute(
           name: 'onBoarding',
@@ -230,12 +221,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'chat',
           path: '/chat',
           requireAuth: true,
-          builder: (context, params) => ChatWidget(),
+          builder: (context, params) => const ChatWidget(),
         ),
         FFRoute(
           name: 'loginCopy',
           path: '/loginCopy',
-          builder: (context, params) => LoginCopyWidget(),
+          builder: (context, params) => const LoginCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -471,7 +462,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(
+  static TransitionInfo appDefault() => const TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.fade,
         duration: Duration(milliseconds: 0),

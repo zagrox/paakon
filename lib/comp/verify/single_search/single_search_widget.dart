@@ -2,11 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'single_search_model.dart';
 export 'single_search_model.dart';
 
@@ -47,7 +43,7 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(-1.0, 0.0),
+      alignment: const AlignmentDirectional(-1.0, 0.0),
       child: Wrap(
         spacing: 0.0,
         runSpacing: 0.0,
@@ -59,13 +55,13 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
         clipBehavior: Clip.none,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
             child: TextFormField(
               controller: _model.emailAddressTextController,
               focusNode: _model.emailAddressFocusNode,
               onChanged: (_) => EasyDebounce.debounce(
                 '_model.emailAddressTextController',
-                Duration(milliseconds: 2000),
+                const Duration(milliseconds: 2000),
                 () => setState(() {}),
               ),
               obscureText: false,
@@ -92,21 +88,21 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 2.0,
                   ),
@@ -115,7 +111,7 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
                 filled: true,
                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
                 suffixIcon: _model.emailAddressTextController!.text.isNotEmpty
                     ? InkWell(
                         onTap: () async {
@@ -140,7 +136,7 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: FFButtonWidget(
               onPressed: () {
                 print('Button pressed ...');
@@ -149,8 +145,8 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 64.0,
-                padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 color: FlutterFlowTheme.of(context).tertiary,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: 'Peyda',
@@ -170,12 +166,12 @@ class _SingleSearchWidgetState extends State<SingleSearchWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                 child: RichText(
                   textScaler: MediaQuery.of(context).textScaler,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: 'هزینه هر بررسی ',
                         style: TextStyle(),
                       ),

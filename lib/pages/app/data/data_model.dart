@@ -3,15 +3,9 @@ import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/comp/verify/enrich_search/enrich_search_widget.dart';
 import '/comp/verify/table_enrich_results/table_enrich_results_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'data_widget.dart' show DataWidget;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class DataModel extends FlutterFlowModel<DataWidget> {
   ///  Local state fields for this page.

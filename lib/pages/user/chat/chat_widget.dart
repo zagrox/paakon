@@ -4,11 +4,7 @@ import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'chat_model.dart';
 export 'chat_model.dart';
 
@@ -62,18 +58,18 @@ class _ChatWidgetState extends State<ChatWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
                         updateCallback: () => setState(() {}),
-                        child: SideNavWidget(
+                        child: const SideNavWidget(
                           selectnavr: 6,
                         ),
                       ),
                     ),
                   Flexible(
                     child: Container(
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         minHeight: double.infinity,
                       ),
                       decoration: BoxDecoration(
@@ -85,7 +81,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                           wrapWithModel(
                             model: _model.topNavModel,
                             updateCallback: () => setState(() {}),
-                            child: TopNavWidget(),
+                            child: const TopNavWidget(),
                           ),
                           Flexible(
                             child: FlutterFlowWebView(
@@ -104,7 +100,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                             wrapWithModel(
                               model: _model.mobileNavModel,
                               updateCallback: () => setState(() {}),
-                              child: MobileNavWidget(
+                              child: const MobileNavWidget(
                                 selectnav: 6,
                               ),
                             ),

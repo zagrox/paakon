@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'breadcrumb_model.dart';
 export 'breadcrumb_model.dart';
 
@@ -42,15 +39,15 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: 70.0,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 300.0,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -59,7 +56,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -69,7 +66,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
                 context.pushNamed(
                   'Home',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: TransitionInfo(
+                    kTransitionInfoKey: const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -88,7 +85,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
               ),
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -97,7 +94,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -107,7 +104,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
                 context.pushNamed(
                   'Account',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: TransitionInfo(
+                    kTransitionInfoKey: const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -126,7 +123,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
               ),
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -135,7 +132,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Text(
               'paakon://paakon.com${GoRouterState.of(context).uri.toString()}',
               style: FlutterFlowTheme.of(context).titleSmall.override(

@@ -3,9 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'select_box_model.dart';
 export 'select_box_model.dart';
 
@@ -47,7 +44,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
       height: 300.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -57,7 +54,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -65,12 +62,12 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
               child: Text(
                 'برای شروع پاکسازی، ابتدا فایل خود را انتخاب و آپلود کنید.',
                 textAlign: TextAlign.center,
@@ -83,7 +80,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   final selectedFiles = await selectFiles(
@@ -131,7 +128,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                     context.pushNamed(
                       'bulk',
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: TransitionInfo(
+                        kTransitionInfoKey: const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -149,9 +146,9 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily: 'Peyda',
@@ -159,7 +156,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                         useGoogleFonts: false,
                       ),
                   elevation: 2.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
@@ -167,7 +164,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   context.pop();
@@ -176,9 +173,9 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Peyda',
@@ -195,7 +192,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   Navigator.pop(context);
@@ -204,9 +201,9 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily: 'Peyda',
@@ -215,7 +212,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                         useGoogleFonts: false,
                       ),
                   elevation: 0.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 0.0,
                   ),

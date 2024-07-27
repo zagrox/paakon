@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'icons_table_model.dart';
 export 'icons_table_model.dart';
 
@@ -43,12 +40,12 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
     return Container(
       width: double.infinity,
       height: 145.0,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -58,7 +55,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -70,7 +67,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.create_new_folder_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -96,7 +93,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -108,7 +105,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_special_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -134,7 +131,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -146,7 +143,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_shared_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -172,7 +169,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -184,7 +181,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.add_card,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -204,7 +201,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 ],
               ),
             ),
-          ].divide(SizedBox(width: 12.0)),
+          ].divide(const SizedBox(width: 12.0)),
         ),
       ),
     );

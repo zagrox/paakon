@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'info_credit_model.dart';
 export 'info_credit_model.dart';
 
@@ -43,14 +41,14 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(4.0),
       child: Container(
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           minWidth: 370.0,
           maxHeight: 190.0,
         ),
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 6.0,
               color: Color(0x4B1A1F24),
@@ -65,14 +63,14 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
               FlutterFlowTheme.of(context).tertiary,
               FlutterFlowTheme.of(context).primary
             ],
-            stops: [0.0, 1.0],
-            begin: AlignmentDirectional(0.94, -1.0),
-            end: AlignmentDirectional(-0.94, 1.0),
+            stops: const [0.0, 1.0],
+            begin: const AlignmentDirectional(0.94, -1.0),
+            end: const AlignmentDirectional(-0.94, 1.0),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,7 +136,7 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
                 },
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -5,9 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'table_enrich_results_model.dart';
 export 'table_enrich_results_model.dart';
@@ -47,21 +44,21 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Text(
                       'تاریخچه',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -74,9 +71,9 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: FlutterFlowChoiceChips(
-                      options: [
+                      options: const [
                         ChipData('CSV', Icons.file_open_outlined),
                         ChipData('Excel', Icons.drive_file_move_outlined),
                         ChipData('Print', Icons.print_outlined)
@@ -131,13 +128,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
               child: Container(
                 width: double.infinity,
                 height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent3,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(8.0),
@@ -145,7 +142,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -263,7 +260,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -292,13 +289,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 4.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 4.0),
                                   child: Text(
                                     'zagrox@gmail.com',
@@ -364,7 +361,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
@@ -394,7 +391,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: ContactBottomWidget(),
+                                          child: const ContactBottomWidget(),
                                         ),
                                       );
                                     },
@@ -424,7 +421,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -453,13 +450,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 4.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 4.0),
                                   child: Text(
                                     'zagrox@gmail.com',
@@ -525,7 +522,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
@@ -555,7 +552,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: ContactBottomWidget(),
+                                          child: const ContactBottomWidget(),
                                         ),
                                       );
                                     },
@@ -585,7 +582,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -614,13 +611,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 4.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 4.0),
                                   child: Text(
                                     'zagrox@gmail.com',
@@ -686,7 +683,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
@@ -716,7 +713,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: ContactBottomWidget(),
+                                          child: const ContactBottomWidget(),
                                         ),
                                       );
                                     },
@@ -746,7 +743,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -775,13 +772,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 4.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 4.0),
                                   child: Text(
                                     'zagrox@gmail.com',
@@ -847,7 +844,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
@@ -877,7 +874,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: ContactBottomWidget(),
+                                          child: const ContactBottomWidget(),
                                         ),
                                       );
                                     },
@@ -907,7 +904,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -936,13 +933,13 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 4.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 4.0),
                                   child: Text(
                                     'zagrox@gmail.com',
@@ -1008,7 +1005,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
@@ -1038,7 +1035,7 @@ class _TableEnrichResultsWidgetState extends State<TableEnrichResultsWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: ContactBottomWidget(),
+                                          child: const ContactBottomWidget(),
                                         ),
                                       );
                                     },

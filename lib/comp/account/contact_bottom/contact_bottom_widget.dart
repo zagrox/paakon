@@ -2,9 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'contact_bottom_model.dart';
 export 'contact_bottom_model.dart';
 
@@ -42,13 +39,13 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: 350.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -56,14 +53,14 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -77,7 +74,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'SARA MANDI',
@@ -92,7 +89,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             'mailadress@gmail.com',
@@ -108,7 +105,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -118,7 +115,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                                 width: 100.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFDBE2E7),
+                                  color: const Color(0xFFDBE2E7),
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: Image.asset(
@@ -130,12 +127,12 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                                 child: Stack(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: Container(
                                         width: 120.0,
                                         height: 120.0,
                                         clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
@@ -151,7 +148,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 44.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -162,16 +159,16 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                                   context.pop();
                                 },
                                 text: 'دانلود',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.save_alt,
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 150.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -185,7 +182,7 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                                         useGoogleFonts: false,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -196,16 +193,16 @@ class _ContactBottomWidgetState extends State<ContactBottomWidget> {
                                   print('Button pressed ...');
                                 },
                                 text: 'اشتراک',
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.ios_share_outlined,
                                   size: 18.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 150.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,

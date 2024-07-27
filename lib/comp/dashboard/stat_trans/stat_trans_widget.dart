@@ -1,10 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'stat_trans_model.dart';
 export 'stat_trans_model.dart';
 
@@ -43,15 +39,15 @@ class _StatTransWidgetState extends State<StatTransWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
         child: GridView(
           padding: EdgeInsets.zero,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
@@ -71,7 +67,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +81,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '32',
                             style: TextStyle(),
                           ),
@@ -119,7 +115,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ),
@@ -133,7 +129,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -147,7 +143,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '18',
                             style: TextStyle(),
                           ),
@@ -195,7 +191,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -209,7 +205,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '12',
                             style: TextStyle(),
                           ),
@@ -243,7 +239,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ),
@@ -257,7 +253,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -271,7 +267,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                             text: '2.5',
                             style: TextStyle(),
                           ),
@@ -305,7 +301,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                             useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
             ),
