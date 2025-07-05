@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
@@ -58,7 +59,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -79,7 +80,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
         tablet: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(-1.0, 0.0),
+        alignment: AlignmentDirectional(-1.0, 0.0),
         child: Container(
           width: FFAppState().navOpen ? 240.0 : 65.0,
           decoration: BoxDecoration(
@@ -95,14 +96,14 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('Account');
+                  context.pushNamed(AccountWidget.routeName);
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 90.0,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     minWidth: 110.0,
                   ),
                   decoration: BoxDecoration(
@@ -127,7 +128,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       if (FFAppState().navOpen == true)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -144,14 +145,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 22.0,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                               RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
-                                    const TextSpan(
+                                    TextSpan(
                                       text: 'خدمات',
                                       style: TextStyle(),
                                     ),
@@ -162,7 +162,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             .accent2,
                                       ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: 'ایمیل',
                                       style: TextStyle(),
                                     )
@@ -172,7 +172,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       .override(
                                         fontFamily: 'Peyda',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -188,9 +187,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -198,7 +197,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         color: widget.selectnavr == 1
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -208,20 +207,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Account');
+                            context.pushNamed(AccountWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.flag_outlined,
@@ -233,7 +232,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'داشبورد من',
@@ -242,7 +241,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -253,9 +251,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -263,7 +261,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         color: widget.selectnavr == 2
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -273,20 +271,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('bulk');
+                            context.pushNamed(BulkWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.checklist_rtl,
@@ -298,7 +296,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پاکسازی انبوه',
@@ -307,7 +305,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -318,9 +315,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -328,7 +325,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         color: widget.selectnavr == 3
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -338,20 +335,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('single');
+                            context.pushNamed(SingleWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.alternate_email,
@@ -363,7 +360,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پاکسازی تکی',
@@ -372,7 +369,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -383,9 +379,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 0.0),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -393,7 +389,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         color: widget.selectnavr == 4
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(12.0),
                           topLeft: Radius.circular(0.0),
@@ -403,20 +399,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('data');
+                            context.pushNamed(DataWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.switch_access_shortcut_add,
@@ -428,7 +424,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'کاوش ایمیل',
@@ -437,7 +433,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -449,11 +444,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                   ),
                   if (FFAppState().navOpen == true)
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Container(
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 20.0, 8.0),
                           child: Text(
                             'حساب کاربری:',
@@ -464,14 +459,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           ),
                         ),
                       ),
                     ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -479,9 +473,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'profile',
+                          ProfileWidget.routeName,
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -490,7 +484,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                        duration: Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -505,13 +499,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.face_retouching_natural_outlined,
@@ -523,7 +517,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'پروفایل',
@@ -532,7 +526,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -543,9 +536,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -561,20 +554,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 6.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 6.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('report');
+                            context.pushNamed(ReportWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.bar_chart_rounded,
@@ -586,7 +579,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'گزارشات',
@@ -595,7 +588,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -606,17 +598,17 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('history');
+                        context.pushNamed(HistoryWidget.routeName);
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                        duration: Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -631,13 +623,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.auto_mode,
@@ -649,7 +641,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Text(
                                     'سفارشات',
@@ -658,7 +650,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -669,7 +660,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -677,9 +668,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'help',
+                          HelpWidget.routeName,
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -688,7 +679,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                        duration: Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -703,7 +694,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -711,13 +702,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('help');
+                              context.pushNamed(HelpWidget.routeName);
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Icon(
                                     Icons.description_outlined,
@@ -729,7 +720,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                                 if (FFAppState().navOpen == true)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Text(
                                       'راهنما',
@@ -738,7 +729,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           .override(
                                             fontFamily: 'Peyda',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -750,7 +740,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -758,9 +748,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'notification',
+                          NotificationWidget.routeName,
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -769,7 +759,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                        duration: Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -784,13 +774,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 4.0, 0.0),
                                 child: Icon(
                                   Icons.notifications_none,
@@ -803,7 +793,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               if (FFAppState().navOpen == true)
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Text(
                                       'پیام ها',
@@ -812,7 +802,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           .override(
                                             fontFamily: 'Peyda',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -823,14 +812,14 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 4.0)).around(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)).around(SizedBox(height: 4.0)),
               ),
               Expanded(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 16.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -838,9 +827,9 @@ class _SideNavWidgetState extends State<SideNavWidget>
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'notification',
+                          NotificationWidget.routeName,
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -849,7 +838,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         );
                       },
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                        duration: Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -858,7 +847,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 8.0, 8.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -873,7 +862,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   if (FFAppState().navOpen == true) {
                                     // closeNav
                                     FFAppState().navOpen = false;
-                                    setState(() {});
+                                    safeSetState(() {});
                                     if (animationsMap[
                                             'iconOnActionTriggerAnimation'] !=
                                         null) {
@@ -885,7 +874,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   } else {
                                     // openNav
                                     FFAppState().navOpen = true;
-                                    setState(() {});
+                                    safeSetState(() {});
                                     if (animationsMap[
                                             'iconOnActionTriggerAnimation'] !=
                                         null) {
@@ -906,7 +895,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -914,7 +903,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('Home');
+                                      context.pushNamed(HomeWidget.routeName);
                                     },
                                     child: Icon(
                                       Icons.other_houses_outlined,
@@ -926,7 +915,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                               if (FFAppState().navOpen == true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -934,7 +923,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('profile');
+                                      context
+                                          .pushNamed(ProfileWidget.routeName);
                                     },
                                     child: Icon(
                                       Icons.location_history,

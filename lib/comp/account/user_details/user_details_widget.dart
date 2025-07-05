@@ -26,7 +26,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
     super.initState();
     _model = createModel(context, () => UserDetailsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,13 +39,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(0.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 8.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,14 +65,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'نام حساب:',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -86,14 +85,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 0.0, 4.0, 0.0),
                           child: Icon(
                             Icons.verified_outlined,
@@ -110,7 +108,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                     color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,7 +122,6 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                         Text(
@@ -134,14 +131,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +151,6 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                         Text(
@@ -165,14 +160,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -186,7 +180,6 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                         Text(
@@ -196,14 +189,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -217,7 +209,6 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                         Text(
@@ -230,13 +221,12 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                       ],
                     ),
                   ),
-                ].divide(const SizedBox(height: 2.0)),
+                ].divide(SizedBox(height: 2.0)),
               ),
             ],
           ),

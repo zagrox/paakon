@@ -11,6 +11,9 @@ export 'single_model.dart';
 class SingleWidget extends StatefulWidget {
   const SingleWidget({super.key});
 
+  static String routeName = 'single';
+  static String routePath = '/single';
+
   @override
   State<SingleWidget> createState() => _SingleWidgetState();
 }
@@ -25,7 +28,7 @@ class _SingleWidgetState extends State<SingleWidget> {
     super.initState();
     _model = createModel(context, () => SingleModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -41,9 +44,10 @@ class _SingleWidgetState extends State<SingleWidget> {
         title: 'single',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -58,11 +62,11 @@ class _SingleWidgetState extends State<SingleWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
-                        updateCallback: () => setState(() {}),
-                        child: const SideNavWidget(
+                        updateCallback: () => safeSetState(() {}),
+                        child: SideNavWidget(
                           selectnavr: 3,
                         ),
                       ),
@@ -77,15 +81,15 @@ class _SingleWidgetState extends State<SingleWidget> {
                         children: [
                           wrapWithModel(
                             model: _model.topNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const TopNavWidget(),
+                            updateCallback: () => safeSetState(() {}),
+                            child: TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -99,7 +103,7 @@ class _SingleWidgetState extends State<SingleWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -123,10 +127,9 @@ class _SingleWidgetState extends State<SingleWidget> {
                                                                     context)
                                                                 .primary,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: 'ایمیل',
                                                   style: TextStyle(),
                                                 )
@@ -141,7 +144,6 @@ class _SingleWidgetState extends State<SingleWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -154,27 +156,27 @@ class _SingleWidgetState extends State<SingleWidget> {
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
                                         ]
-                                            .divide(const SizedBox(width: 12.0))
-                                            .addToStart(const SizedBox(width: 24.0))
-                                            .addToEnd(const SizedBox(width: 8.0)),
+                                            .divide(SizedBox(width: 12.0))
+                                            .addToStart(SizedBox(width: 24.0))
+                                            .addToEnd(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: wrapWithModel(
                                         model: _model.singleSearchModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: const SingleSearchWidget(),
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: SingleSearchWidget(),
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 8.0))
-                                      .around(const SizedBox(height: 8.0)),
+                                      .divide(SizedBox(height: 8.0))
+                                      .around(SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -186,8 +188,8 @@ class _SingleWidgetState extends State<SingleWidget> {
                           ))
                             wrapWithModel(
                               model: _model.mobileNavModel,
-                              updateCallback: () => setState(() {}),
-                              child: const MobileNavWidget(
+                              updateCallback: () => safeSetState(() {}),
+                              child: MobileNavWidget(
                                 selectnav: 3,
                               ),
                             ),

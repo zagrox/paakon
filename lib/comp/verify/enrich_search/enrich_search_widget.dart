@@ -30,7 +30,7 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -43,9 +43,9 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(-1.0, 0.0),
+      alignment: AlignmentDirectional(-1.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Wrap(
           spacing: 0.0,
           runSpacing: 0.0,
@@ -57,14 +57,14 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
           clipBehavior: Clip.none,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.emailAddressTextController,
                 focusNode: _model.emailAddressFocusNode,
                 onChanged: (_) => EasyDebounce.debounce(
                   '_model.emailAddressTextController',
-                  const Duration(milliseconds: 2000),
-                  () => setState(() {}),
+                  Duration(milliseconds: 2000),
+                  () => safeSetState(() {}),
                 ),
                 obscureText: false,
                 decoration: InputDecoration(
@@ -73,7 +73,6 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                         fontFamily: 'Peyda',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   alignLabelWithHint: false,
                   hintText: 'آدرس ایمیل',
@@ -82,7 +81,6 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 20.0,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -92,21 +90,21 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 2.0,
                     ),
@@ -115,12 +113,12 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                   filled: true,
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
                   suffixIcon: _model.emailAddressTextController!.text.isNotEmpty
                       ? InkWell(
                           onTap: () async {
                             _model.emailAddressTextController?.clear();
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           child: Icon(
                             Icons.clear,
@@ -134,14 +132,13 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                       fontFamily: 'Peyda',
                       fontSize: 20.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
                 validator: _model.emailAddressTextControllerValidator
                     .asValidator(context),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: FFButtonWidget(
                 onPressed: () {
                   print('Button pressed ...');
@@ -149,21 +146,20 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                 text: 'شروع اعتبارسنجی',
                 icon: Icon(
                   Icons.person_search_outlined,
-                  color: FlutterFlowTheme.of(context).primaryText,
                   size: 32.0,
                 ),
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 64.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                  iconColor: FlutterFlowTheme.of(context).primaryText,
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily: 'Peyda',
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).lineColor,
@@ -177,12 +173,12 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                   child: RichText(
                     textScaler: MediaQuery.of(context).textScaler,
                     text: TextSpan(
                       children: [
-                        const TextSpan(
+                        TextSpan(
                           text: 'هزینه هر کاوش موفق ',
                           style: TextStyle(),
                         ),
@@ -197,7 +193,6 @@ class _EnrichSearchWidgetState extends State<EnrichSearchWidget> {
                       style: FlutterFlowTheme.of(context).labelSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),

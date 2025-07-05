@@ -6,6 +6,7 @@ import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,6 +15,9 @@ export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({super.key});
+
+  static String routeName = 'profile';
+  static String routePath = '/profile';
 
   @override
   State<ProfileWidget> createState() => _ProfileWidgetState();
@@ -30,7 +34,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     _model = createModel(context, () => ProfileModel());
 
     _model.switchValue = true;
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -72,9 +76,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             title: 'My Paakon Account',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor:
@@ -90,18 +95,18 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         tablet: false,
                       ))
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.sideNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const SideNavWidget(
+                            updateCallback: () => safeSetState(() {}),
+                            child: SideNavWidget(
                               selectnavr: 6,
                             ),
                           ),
                         ),
                       Flexible(
                         child: Container(
-                          constraints: const BoxConstraints(
+                          constraints: BoxConstraints(
                             minHeight: double.infinity,
                           ),
                           decoration: BoxDecoration(
@@ -113,15 +118,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             children: [
                               wrapWithModel(
                                 model: _model.topNavModel,
-                                updateCallback: () => setState(() {}),
-                                child: const TopNavWidget(),
+                                updateCallback: () => safeSetState(() {}),
+                                child: TopNavWidget(),
                               ),
                               Expanded(
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(0.0),
@@ -138,7 +143,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   14.0, 16.0, 14.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -153,10 +158,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'profile',
+                                                    ProfileWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -178,18 +183,18 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(4.0),
+                                                        EdgeInsets.all(4.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               56.0),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         fadeOutDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
@@ -206,7 +211,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: RichText(
@@ -229,11 +234,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       .primary,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
-                                                      const TextSpan(
+                                                      TextSpan(
                                                         text: 'حساب',
                                                         style: TextStyle(),
                                                       )
@@ -244,7 +247,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -267,7 +269,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   size: 24.0,
                                                 ),
                                                 onPressed: () async {
-                                                  context.pushNamed('edit');
+                                                  context.pushNamed(
+                                                      EditWidget.routeName);
                                                 },
                                               ),
                                             ],
@@ -275,10 +278,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 8.0, 12.0, 0.0),
                                             child: Container(
                                               decoration: BoxDecoration(
@@ -294,7 +297,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 16.0, 16.0, 8.0),
                                                 child: Column(
@@ -327,7 +330,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -343,8 +346,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -367,8 +368,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .normal,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -383,7 +382,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -407,8 +406,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Text(
@@ -429,8 +426,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -438,7 +433,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -462,8 +457,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Text(
@@ -484,8 +477,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -493,7 +484,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -517,8 +508,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Text(
@@ -539,8 +528,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -548,7 +535,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -572,8 +559,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Text(
@@ -595,8 +580,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -604,7 +587,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -628,13 +611,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           'Peyda',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Text(
                                                                 dateTimeFormat(
-                                                                  'relative',
+                                                                  "relative",
                                                                   profileUsersRow
                                                                       .createdAt,
                                                                   locale: FFLocalizations.of(
@@ -655,14 +636,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           .secondaryText,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 2.0)),
                                                     ),
                                                   ],
@@ -673,7 +652,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: Container(
                                             height: 60.0,
@@ -691,7 +670,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -705,7 +684,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -722,8 +701,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       'Peyda',
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
@@ -732,7 +709,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     value: _model.switchValue!,
                                                     onChanged:
                                                         (newValue) async {
-                                                      setState(() =>
+                                                      safeSetState(() =>
                                                           _model.switchValue =
                                                               newValue);
                                                       if (newValue) {
@@ -769,7 +746,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -777,7 +754,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context.pushNamed('chat');
+                                              context.pushNamed(
+                                                  ChatWidget.routeName);
                                             },
                                             child: Container(
                                               height: 60.0,
@@ -795,7 +773,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -810,7 +788,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -827,19 +805,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       'Peyda',
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -864,7 +840,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -872,7 +848,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context.pushNamed('notification');
+                                              context.pushNamed(
+                                                  NotificationWidget.routeName);
                                             },
                                             child: Container(
                                               height: 60.0,
@@ -890,7 +867,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -905,7 +882,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -922,19 +899,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       'Peyda',
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -959,7 +934,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -967,7 +942,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context.pushNamed('Home');
+                                              context.pushNamed(
+                                                  HomeWidget.routeName);
                                             },
                                             child: Container(
                                               height: 60.0,
@@ -985,7 +961,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1000,7 +976,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -1017,19 +993,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       'Peyda',
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1054,7 +1028,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: Container(
                                             height: 60.0,
@@ -1072,7 +1046,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1085,7 +1059,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1096,19 +1070,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                           .override(
                                                             fontFamily: 'Peyda',
                                                             letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                false,
                                                           ),
                                                     ),
                                                   ),
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -1132,7 +1104,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: Container(
                                             height: 60.0,
@@ -1150,7 +1122,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1163,7 +1135,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1174,19 +1146,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                           .override(
                                                             fontFamily: 'Peyda',
                                                             letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                false,
                                                           ),
                                                     ),
                                                   ),
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -1210,7 +1180,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1225,7 +1195,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   .clearRedirectLocation();
 
                                               context.goNamedAuth(
-                                                  'login', context.mounted);
+                                                  LoginWidget.routeName,
+                                                  context.mounted);
                                             },
                                             child: Container(
                                               height: 60.0,
@@ -1243,7 +1214,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1258,7 +1229,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -1278,19 +1249,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1314,8 +1283,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                         ),
                                       ]
-                                          .divide(const SizedBox(height: 12.0))
-                                          .around(const SizedBox(height: 12.0)),
+                                          .divide(SizedBox(height: 12.0))
+                                          .around(SizedBox(height: 12.0)),
                                     ),
                                   ),
                                 ),
@@ -1327,8 +1296,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               ))
                                 wrapWithModel(
                                   model: _model.mobileNavModel,
-                                  updateCallback: () => setState(() {}),
-                                  child: const MobileNavWidget(
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: MobileNavWidget(
                                     selectnav: 6,
                                   ),
                                 ),

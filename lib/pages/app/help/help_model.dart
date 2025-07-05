@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 class HelpModel extends FlutterFlowModel<HelpWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -33,7 +32,6 @@ class HelpModel extends FlutterFlowModel<HelpWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     contactModel.dispose();

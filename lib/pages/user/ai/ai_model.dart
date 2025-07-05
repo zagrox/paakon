@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class AiModel extends FlutterFlowModel<AiWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for chatText widget.
   FocusNode? chatTextFocusNode;
   TextEditingController? chatTextTextController;
@@ -18,7 +17,6 @@ class AiModel extends FlutterFlowModel<AiWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     chatTextFocusNode?.dispose();
     chatTextTextController?.dispose();
   }

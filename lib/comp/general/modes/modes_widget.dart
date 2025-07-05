@@ -26,7 +26,7 @@ class _ModesWidgetState extends State<ModesWidget> {
     super.initState();
     _model = createModel(context, () => ModesModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

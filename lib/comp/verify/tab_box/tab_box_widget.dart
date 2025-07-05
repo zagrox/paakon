@@ -36,8 +36,9 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -55,24 +56,22 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
       children: [
         Flexible(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Align(
-                  alignment: const Alignment(0.0, 0),
+                  alignment: Alignment(0.0, 0),
                   child: FlutterFlowButtonTabBar(
                     useToggleButtonStyle: true,
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Peyda',
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                     unselectedLabelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Peyda',
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                     labelColor: FlutterFlowTheme.of(context).primaryBtnText,
                     unselectedLabelColor:
@@ -86,9 +85,9 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                     borderRadius: 8.0,
                     elevation: 0.0,
                     buttonMargin:
-                        const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    padding: const EdgeInsets.all(3.0),
-                    tabs: const [
+                        EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsets.all(3.0),
+                    tabs: [
                       Tab(
                         text: 'در حال پاکسازی',
                       ),
@@ -110,12 +109,12 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                     controller: _model.tabBarController,
                     children: [
                       Stack(
-                        alignment: const AlignmentDirectional(-0.0, 0.0),
+                        alignment: AlignmentDirectional(-0.0, 0.0),
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.signal_cellular_no_sim_outlined,
@@ -126,7 +125,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 50.0),
                             child: Text(
                               'فایل شامل لیست ایمیل های خود را انتخاب کنید',
@@ -136,12 +135,11 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               '(مشاهده نمونه فایل)',
                               style: FlutterFlowTheme.of(context)
@@ -152,14 +150,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                         .secondaryText,
                                     letterSpacing: 0.0,
                                     decoration: TextDecoration.underline,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 48.0, 0.0, 8.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -173,7 +170,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: const SizedBox(
+                                          child: Container(
                                             height: 300.0,
                                             child: SelectBoxWidget(),
                                           ),
@@ -183,15 +180,15 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                   ).then((value) => safeSetState(() {}));
                                 },
                                 text: 'آپلود لیست',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.drive_folder_upload,
                                   size: 22.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 44.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
@@ -203,10 +200,9 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                             .primaryBackground,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
-                                        useGoogleFonts: false,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -221,13 +217,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 28.0, 8.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
@@ -243,7 +239,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -256,7 +252,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -278,11 +274,10 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                     fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 random_data
@@ -300,7 +295,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -309,7 +303,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -330,7 +324,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -372,13 +366,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 8.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
@@ -394,7 +388,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -407,7 +401,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -429,11 +423,10 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                     fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 random_data
@@ -451,7 +444,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -460,7 +452,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -481,7 +473,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -523,13 +515,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 8.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
@@ -545,7 +537,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -558,7 +550,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -580,11 +572,10 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                     fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 random_data
@@ -602,7 +593,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -611,7 +601,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -632,7 +622,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -674,13 +664,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 8.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
@@ -696,7 +686,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -709,7 +699,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -731,11 +721,10 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                     fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 random_data
@@ -753,7 +742,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -762,7 +750,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -783,7 +771,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -825,13 +813,13 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 8.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
@@ -847,7 +835,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -860,7 +848,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -882,11 +870,10 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                     fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 random_data
@@ -904,7 +891,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -913,7 +899,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -934,7 +920,7 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -978,9 +964,9 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                         ],
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, -1.0),
+                        alignment: AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: Text(
                             'فایل در حال پاکسازی وجود ندارد. لیست خود را انتخاب کنید.',
                             style:
@@ -990,7 +976,6 @@ class _TabBoxWidgetState extends State<TabBoxWidget>
                                           .secondaryText,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),

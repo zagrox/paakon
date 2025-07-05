@@ -97,10 +97,18 @@ String formatNumber(
           formattedValue = NumberFormat.decimalPattern().format(value);
           break;
         case DecimalType.periodDecimal:
-          formattedValue = NumberFormat.decimalPattern('en_US').format(value);
+          if (currency != null) {
+            formattedValue = NumberFormat('#,##0.00', 'en_US').format(value);
+          } else {
+            formattedValue = NumberFormat.decimalPattern('en_US').format(value);
+          }
           break;
         case DecimalType.commaDecimal:
-          formattedValue = NumberFormat.decimalPattern('es_PA').format(value);
+          if (currency != null) {
+            formattedValue = NumberFormat('#,##0.00', 'es_PA').format(value);
+          } else {
+            formattedValue = NumberFormat.decimalPattern('es_PA').format(value);
+          }
           break;
       }
       break;
@@ -282,12 +290,12 @@ void showSnackbar(
       content: Row(
         children: [
           if (loading)
-            const Padding(
+            Padding(
               padding: EdgeInsetsDirectional.only(end: 10.0),
-              child: SizedBox(
+              child: Container(
                 height: 20,
                 width: 20,
-                child: CircularProgressIndicator(
+                child: const CircularProgressIndicator(
                   color: Colors.white,
                 ),
               ),
@@ -305,6 +313,19 @@ extension FFStringExt on String {
       maxChars != null && length > maxChars
           ? replaceRange(maxChars, null, replacement)
           : this;
+
+  String toCapitalization(TextCapitalization textCapitalization) {
+    switch (textCapitalization) {
+      case TextCapitalization.none:
+        return this;
+      case TextCapitalization.words:
+        return split(' ').map(toBeginningOfSentenceCase).join(' ');
+      case TextCapitalization.sentences:
+        return toBeginningOfSentenceCase(this);
+      case TextCapitalization.characters:
+        return toUpperCase();
+    }
+  }
 }
 
 extension ListFilterExt<T> on Iterable<T?> {
@@ -378,17 +399,8 @@ void fixStatusBarOniOS16AndBelow(BuildContext context) {
   }
 }
 
-extension ListUniqueExt<T> on Iterable<T> {
-  List<T> unique(dynamic Function(T) getKey) {
-    var distinctSet = <dynamic>{};
-    var distinctList = <T>[];
-    for (var item in this) {
-      if (distinctSet.add(getKey(item))) {
-        distinctList.add(item);
-      }
-    }
-    return distinctList;
-  }
+extension ColorOpacityExt on Color {
+  Color applyAlpha(double val) => withValues(alpha: val);
 }
 
 String roundTo(double value, int decimalPoints) {
@@ -427,3 +439,21 @@ double computeGradientAlignmentY(double evaluatedAngle) {
   }
   return double.parse(roundTo(y, 2));
 }
+
+extension ListUniqueExt<T> on Iterable<T> {
+  List<T> unique(dynamic Function(T) getKey) {
+    var distinctSet = <dynamic>{};
+    var distinctList = <T>[];
+    for (var item in this) {
+      if (distinctSet.add(getKey(item))) {
+        distinctList.add(item);
+      }
+    }
+    return distinctList;
+  }
+}
+
+String getCurrentRoute(BuildContext context) =>
+    context.mounted ? MyApp.of(context).getRoute() : '';
+List<String> getCurrentRouteStack(BuildContext context) =>
+    context.mounted ? MyApp.of(context).getRouteStack() : [];

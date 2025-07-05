@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'stats_colors_model.dart';
 export 'stats_colors_model.dart';
 
@@ -25,7 +26,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
     super.initState();
     _model = createModel(context, () => StatsColorsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -54,7 +55,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,21 +67,29 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '56.4k',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Urbanist',
+                            font: GoogleFonts.urbanist(
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .fontStyle,
+                            ),
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 24.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .fontStyle,
                           ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'تعداد ایمیل',
                       textAlign: TextAlign.center,
@@ -91,7 +100,6 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -112,7 +120,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -124,21 +132,29 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '24.8k',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Urbanist',
+                            font: GoogleFonts.urbanist(
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .fontStyle,
+                            ),
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 24.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .fontStyle,
                           ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'ایمیل پاکیزه',
                       textAlign: TextAlign.center,
@@ -149,7 +165,6 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -169,7 +184,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -181,21 +196,29 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                     child: Text(
                       '16.4k',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Urbanist',
+                            font: GoogleFonts.urbanist(
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .fontStyle,
+                            ),
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 24.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .fontStyle,
                           ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'ایمیل نامعتبر',
                       textAlign: TextAlign.center,
@@ -206,7 +229,6 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -215,7 +237,7 @@ class _StatsColorsWidgetState extends State<StatsColorsWidget> {
             ),
           ),
         ),
-      ].divide(const SizedBox(width: 12.0)),
+      ].divide(SizedBox(width: 12.0)),
     );
   }
 }

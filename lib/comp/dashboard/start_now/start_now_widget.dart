@@ -2,6 +2,7 @@ import '/comp/account/select_box/select_box_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'start_now_model.dart';
@@ -28,7 +29,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
     super.initState();
     _model = createModel(context, () => StartNowModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -48,9 +49,9 @@ class _StartNowWidgetState extends State<StartNowWidget> {
             FlutterFlowTheme.of(context).secondary,
             FlutterFlowTheme.of(context).accent1
           ],
-          stops: const [0.0, 1.0],
-          begin: const AlignmentDirectional(1.0, 0.0),
-          end: const AlignmentDirectional(-1.0, 0),
+          stops: [0.0, 1.0],
+          begin: AlignmentDirectional(1.0, 0.0),
+          end: AlignmentDirectional(-1.0, 0),
         ),
         borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
@@ -59,26 +60,25 @@ class _StartNowWidgetState extends State<StartNowWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         'انتخاب فایل لیست ایمیل ها',
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Peyda',
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -89,7 +89,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.pushNamed('help');
+                      context.pushNamed(HelpWidget.routeName);
                     },
                     child: Text(
                       'راهنمای کار',
@@ -98,12 +98,11 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                             fontFamily: 'Peyda',
                             color: FlutterFlowTheme.of(context).primaryBtnText,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                     child: Icon(
                       Icons.play_arrow_rounded,
                       color: FlutterFlowTheme.of(context).primaryText,
@@ -121,7 +120,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
               color: FlutterFlowTheme.of(context).alternate,
             ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -151,7 +150,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             'انتخاب فایل',
@@ -164,7 +163,6 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
-                                  useGoogleFonts: false,
                                 ),
                           ),
                         ),
@@ -175,18 +173,17 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                               FlutterFlowTheme.of(context).titleMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 4.0)),
+                      ].divide(SizedBox(height: 4.0)),
                     ),
                   ),
                   Expanded(
                     child: Stack(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 120.0,
                             height: 6.0,
@@ -196,9 +193,9 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                                   FlutterFlowTheme.of(context).primary,
                                   FlutterFlowTheme.of(context).accent3
                                 ],
-                                stops: const [0.0, 1.0],
-                                begin: const AlignmentDirectional(1.0, 0.0),
-                                end: const AlignmentDirectional(-1.0, 0),
+                                stops: [0.0, 1.0],
+                                begin: AlignmentDirectional(1.0, 0.0),
+                                end: AlignmentDirectional(-1.0, 0),
                               ),
                               borderRadius: BorderRadius.circular(4.0),
                             ),
@@ -213,13 +210,13 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                                 FlutterFlowTheme.of(context).primary,
                                 FlutterFlowTheme.of(context).accent3
                               ],
-                              stops: const [0.0, 1.0],
-                              begin: const AlignmentDirectional(1.0, 0.0),
-                              end: const AlignmentDirectional(-1.0, 0),
+                              stops: [0.0, 1.0],
+                              begin: AlignmentDirectional(1.0, 0.0),
+                              end: AlignmentDirectional(-1.0, 0),
                             ),
                             shape: BoxShape.circle,
                           ),
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Icon(
                             Icons.keyboard_double_arrow_left_rounded,
                             color: FlutterFlowTheme.of(context).primaryBtnText,
@@ -252,7 +249,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             'دریافت گزارش',
@@ -265,7 +262,6 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
-                                  useGoogleFonts: false,
                                 ),
                           ),
                         ),
@@ -276,17 +272,16 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                               FlutterFlowTheme.of(context).titleMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 4.0)),
+                      ].divide(SizedBox(height: 4.0)),
                     ),
                   ),
-                ].divide(const SizedBox(width: 16.0)),
+                ].divide(SizedBox(width: 16.0)),
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 14.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 14.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   await showModalBottomSheet(
@@ -298,7 +293,7 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                       return WebViewAware(
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: const SizedBox(
+                          child: Container(
                             height: 300.0,
                             child: SelectBoxWidget(),
                           ),
@@ -311,9 +306,9 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                 options: FFButtonOptions(
                   width: 150.0,
                   height: 48.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(34.0, 0.0, 34.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(34.0, 0.0, 34.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Peyda',
@@ -321,7 +316,6 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
-                        useGoogleFonts: false,
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),
@@ -334,13 +328,13 @@ class _StartNowWidgetState extends State<StartNowWidget> {
             ),
             FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('purchase');
+                context.pushNamed(PurchaseWidget.routeName);
               },
               text: 'جدول تعرفه',
               options: FFButtonOptions(
                 height: 44.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Colors.transparent,
                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Peyda',
@@ -349,14 +343,13 @@ class _StartNowWidgetState extends State<StartNowWidget> {
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
                       decoration: TextDecoration.underline,
-                      useGoogleFonts: false,
                     ),
                 elevation: 0.0,
                 borderRadius: BorderRadius.circular(12.0),
                 hoverTextColor: FlutterFlowTheme.of(context).primaryBackground,
               ),
             ),
-          ].divide(const SizedBox(height: 4.0)).addToEnd(const SizedBox(height: 12.0)),
+          ].divide(SizedBox(height: 4.0)).addToEnd(SizedBox(height: 12.0)),
         ),
       ),
     );

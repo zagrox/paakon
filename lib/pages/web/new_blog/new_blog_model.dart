@@ -1,12 +1,12 @@
 import '/comp/nav/web_bar/web_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'new_blog_widget.dart' show NewBlogWidget;
 import 'package:flutter/material.dart';
 
 class NewBlogModel extends FlutterFlowModel<NewBlogWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for webBar component.
   late WebBarModel webBarModel;
   // State field(s) for blogSearchField widget.
@@ -36,7 +36,6 @@ class NewBlogModel extends FlutterFlowModel<NewBlogWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     webBarModel.dispose();
     blogSearchFieldFocusNode?.dispose();
     blogSearchFieldTextController?.dispose();

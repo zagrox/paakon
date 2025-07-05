@@ -28,7 +28,7 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
     super.initState();
     _model = createModel(context, () => InfoCreditModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -41,14 +41,14 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: EdgeInsets.all(4.0),
       child: Container(
-        constraints: const BoxConstraints(
+        constraints: BoxConstraints(
           minWidth: 370.0,
           maxHeight: 190.0,
         ),
         decoration: BoxDecoration(
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 6.0,
               color: Color(0x4B1A1F24),
@@ -63,14 +63,14 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
               FlutterFlowTheme.of(context).tertiary,
               FlutterFlowTheme.of(context).primary
             ],
-            stops: const [0.0, 1.0],
-            begin: const AlignmentDirectional(0.94, -1.0),
-            end: const AlignmentDirectional(-0.94, 1.0),
+            stops: [0.0, 1.0],
+            begin: AlignmentDirectional(0.94, -1.0),
+            end: AlignmentDirectional(-0.94, 1.0),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -88,13 +88,12 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
                       fontFamily: 'Peyda',
                       color: Colors.white,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
               FutureBuilder<List<StatsRow>>(
                 future: FFAppState().userStat(
                   requestFn: () => StatsTable().querySingleRow(
-                    queryFn: (q) => q.eq(
+                    queryFn: (q) => q.eqOrNull(
                       'user',
                       currentUserUid,
                     ),
@@ -130,13 +129,12 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
                           color: Colors.white,
                           fontSize: 32.0,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   );
                 },
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 4.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,7 +145,6 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
                             fontFamily: 'Peyda',
                             color: Colors.white,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                     Text(
@@ -156,7 +153,6 @@ class _InfoCreditWidgetState extends State<InfoCreditWidget> {
                             fontFamily: 'Peyda',
                             color: Colors.white,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ],

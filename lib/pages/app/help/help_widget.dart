@@ -12,6 +12,9 @@ export 'help_model.dart';
 class HelpWidget extends StatefulWidget {
   const HelpWidget({super.key});
 
+  static String routeName = 'help';
+  static String routePath = '/help';
+
   @override
   State<HelpWidget> createState() => _HelpWidgetState();
 }
@@ -26,7 +29,7 @@ class _HelpWidgetState extends State<HelpWidget> {
     super.initState();
     _model = createModel(context, () => HelpModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -42,9 +45,10 @@ class _HelpWidgetState extends State<HelpWidget> {
         title: 'help',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -59,11 +63,11 @@ class _HelpWidgetState extends State<HelpWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
-                        updateCallback: () => setState(() {}),
-                        child: const SideNavWidget(
+                        updateCallback: () => safeSetState(() {}),
+                        child: SideNavWidget(
                           selectnavr: 9,
                         ),
                       ),
@@ -78,15 +82,15 @@ class _HelpWidgetState extends State<HelpWidget> {
                         children: [
                           wrapWithModel(
                             model: _model.topNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const TopNavWidget(),
+                            updateCallback: () => safeSetState(() {}),
+                            child: TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -100,7 +104,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -124,10 +128,9 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                                     context)
                                                                 .primary,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: 'پاکن',
                                                   style: TextStyle(),
                                                 )
@@ -142,34 +145,34 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 12.0)),
+                                        ].divide(SizedBox(width: 12.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: wrapWithModel(
                                           model: _model.contactModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: const ContactWidget(),
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: ContactWidget(),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           14.0, 8.0, 14.0, 0.0),
                                       child: Container(
                                         height: 70.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: const [
+                                          boxShadow: [
                                             BoxShadow(
                                               blurRadius: 3.0,
                                               color: Color(0x33000000),
@@ -188,7 +191,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
+                                          padding: EdgeInsets.all(12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -200,7 +203,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                 size: 28.0,
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -215,18 +218,17 @@ class _HelpWidgetState extends State<HelpWidget> {
                                                                     context)
                                                                 .primaryBtnText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Icon(
@@ -246,20 +248,21 @@ class _HelpWidgetState extends State<HelpWidget> {
                                       ),
                                     ),
                                     Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: wrapWithModel(
                                           model: _model.faqListModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: const FaqListWidget(),
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: FaqListWidget(),
                                         ),
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 8.0))
-                                      .around(const SizedBox(height: 8.0)),
+                                      .divide(SizedBox(height: 8.0))
+                                      .around(SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -271,8 +274,8 @@ class _HelpWidgetState extends State<HelpWidget> {
                           ))
                             wrapWithModel(
                               model: _model.mobileNavModel,
-                              updateCallback: () => setState(() {}),
-                              child: const MobileNavWidget(
+                              updateCallback: () => safeSetState(() {}),
+                              child: MobileNavWidget(
                                 selectnav: 9,
                               ),
                             ),

@@ -25,7 +25,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
     super.initState();
     _model = createModel(context, () => ContactOptionsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -38,17 +38,17 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Container(
           width: 300.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxHeight: 230.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x33000000),
@@ -61,7 +61,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                       child: Text(
                         'انتخاب ها',
                         textAlign: TextAlign.start,
@@ -80,12 +80,11 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Peyda',
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -104,7 +103,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -112,12 +111,12 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.downloading_sharp,
@@ -127,7 +126,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'دانلود مشخصات',
@@ -136,7 +135,6 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                                     .override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),
@@ -152,12 +150,12 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.group_add_rounded,
@@ -167,7 +165,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'مشاهده مخاطب',
@@ -176,7 +174,6 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                                   .override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -191,12 +188,12 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.ios_share,
@@ -206,7 +203,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'اشتراک گذاری',
@@ -215,7 +212,6 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                                   .override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -234,12 +230,12 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.delete_outline_rounded,
@@ -249,7 +245,7 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'پاک کردن',
@@ -259,7 +255,6 @@ class _ContactOptionsWidgetState extends State<ContactOptionsWidget> {
                                     fontFamily: 'Peyda',
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),

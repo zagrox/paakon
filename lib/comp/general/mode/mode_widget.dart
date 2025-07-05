@@ -26,7 +26,7 @@ class _ModeWidgetState extends State<ModeWidget> {
     super.initState();
     _model = createModel(context, () => ModeModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,11 +39,11 @@ class _ModeWidgetState extends State<ModeWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 56.0,
         height: 56.0,
-        decoration: const BoxDecoration(),
+        decoration: BoxDecoration(),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

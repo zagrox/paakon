@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -13,6 +14,9 @@ export 'signup_model.dart';
 
 class SignupWidget extends StatefulWidget {
   const SignupWidget({super.key});
+
+  static String routeName = 'signup';
+  static String routePath = '/signup';
 
   @override
   State<SignupWidget> createState() => _SignupWidgetState();
@@ -60,14 +64,14 @@ class _SignupWidgetState extends State<SignupWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -14.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -14.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -83,9 +87,10 @@ class _SignupWidgetState extends State<SignupWidget>
         title: 'Signup free in Paakon',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -100,17 +105,17 @@ class _SignupWidgetState extends State<SignupWidget>
                   children: [
                     Container(
                       height: 110.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(4.0),
                                 child: Image.asset(
@@ -122,7 +127,7 @@ class _SignupWidgetState extends State<SignupWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -136,7 +141,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Text(
@@ -148,7 +152,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -162,7 +165,7 @@ class _SignupWidgetState extends State<SignupWidget>
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
@@ -177,10 +180,10 @@ class _SignupWidgetState extends State<SignupWidget>
                             children: [
                               if (!loggedIn)
                                 Padding(
-                                  padding: const EdgeInsets.all(24.0),
+                                  padding: EdgeInsets.all(24.0),
                                   child: Container(
                                     width: double.infinity,
-                                    constraints: const BoxConstraints(
+                                    constraints: BoxConstraints(
                                       maxWidth: 500.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -194,14 +197,14 @@ class _SignupWidgetState extends State<SignupWidget>
                                           CrossAxisAlignment.center,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: EdgeInsets.all(8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
+                                                padding: EdgeInsets.all(8.0),
                                                 child: Text(
                                                   'ثبت نام با حساب گوگل',
                                                   style: FlutterFlowTheme.of(
@@ -214,12 +217,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
+                                                padding: EdgeInsets.all(8.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -248,7 +250,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     });
 
                                                     context.goNamedAuth(
-                                                        'Account',
+                                                        AccountWidget.routeName,
                                                         context.mounted);
                                                   },
                                                   child: Container(
@@ -258,7 +260,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      boxShadow: const [
+                                                      boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
                                                           color:
@@ -278,7 +280,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                     ),
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: FaIcon(
                                                       FontAwesomeIcons.google,
@@ -297,7 +299,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -313,7 +315,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'First name',
@@ -327,7 +328,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -340,7 +340,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -348,7 +348,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -357,7 +357,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -369,7 +369,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -378,7 +378,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .firstNameTextControllerValidator
@@ -387,7 +386,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -402,7 +401,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Last name',
@@ -416,7 +414,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -429,7 +426,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -437,7 +434,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -446,7 +443,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -458,7 +455,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -467,7 +464,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .lastNameTextControllerValidator
@@ -476,7 +472,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -492,7 +488,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Business name',
@@ -506,7 +501,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -519,7 +513,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -527,7 +521,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -536,7 +530,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -548,7 +542,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -557,7 +551,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .businessNameTextControllerValidator
@@ -566,7 +559,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -582,7 +575,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Business ID',
@@ -596,7 +588,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -609,7 +600,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -617,7 +608,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -626,7 +617,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -638,7 +629,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -647,7 +638,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .businessIdTextControllerValidator
@@ -656,7 +646,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -672,7 +662,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Email',
@@ -686,7 +675,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -699,7 +687,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -707,7 +695,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -716,7 +704,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -728,7 +716,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -737,7 +725,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .emailAddressTextControllerValidator
@@ -746,7 +733,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -762,7 +749,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Password',
@@ -776,7 +762,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -789,7 +774,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -797,7 +782,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -806,7 +791,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -818,7 +803,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -827,7 +812,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .passwordSelectTextControllerValidator
@@ -836,7 +820,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -852,7 +836,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               alignLabelWithHint: false,
                                               hintText: 'Confirm Password',
@@ -866,7 +849,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -879,7 +861,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -887,7 +869,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -896,7 +878,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -908,7 +890,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 24.0, 0.0,
                                                           24.0),
                                             ),
@@ -917,7 +899,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .passwordConfirmTextControllerValidator
@@ -926,7 +907,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 20.0, 4.0, 14.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -940,7 +921,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .text) {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
-                                                  const SnackBar(
+                                                  SnackBar(
                                                     content: Text(
                                                       'Passwords don\'t match!',
                                                     ),
@@ -1009,10 +990,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  duration: const Duration(
+                                                  duration: Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -1022,11 +1002,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                               );
 
                                               context.goNamedAuth(
-                                                'Account',
+                                                AccountWidget.routeName,
                                                 context.mounted,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -1040,10 +1020,13 @@ class _SignupWidgetState extends State<SignupWidget>
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 60.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 4.0, 0.0),
+                                              iconColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -1057,7 +1040,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                         .secondaryBackground,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
-                                                    useGoogleFonts: false,
                                                   ),
                                               borderSide: BorderSide(
                                                 color:
@@ -1076,14 +1058,14 @@ class _SignupWidgetState extends State<SignupWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 16.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
                                                 .textScaler,
                                             text: TextSpan(
                                               children: [
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: 'کاربر قبلی هستید؟ ',
                                                   style: TextStyle(),
                                                 ),
@@ -1101,7 +1083,8 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       TapGestureRecognizer()
                                                         ..onTap = () async {
                                                           context.pushNamed(
-                                                              'login');
+                                                              LoginWidget
+                                                                  .routeName);
                                                         },
                                                 )
                                               ],
@@ -1111,12 +1094,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 8.0)),
+                                      ].divide(SizedBox(height: 8.0)),
                                     ),
                                   ),
                                 ),
@@ -1125,7 +1107,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 12.0),
                                       child: Text(
                                         'شما هم اکنون کاربر پاکن هستید.',
@@ -1134,21 +1116,21 @@ class _SignupWidgetState extends State<SignupWidget>
                                             .override(
                                               fontFamily: 'Peyda',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('Account');
+                                        context
+                                            .pushNamed(AccountWidget.routeName);
                                       },
                                       text: 'مشاهده داشبورد کاربری',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1158,10 +1140,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                               fontFamily: 'Peyda',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1169,11 +1150,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                             BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 12.0)),
+                                  ].divide(SizedBox(height: 12.0)),
                                 ),
                             ]
-                                .divide(const SizedBox(height: 8.0))
-                                .around(const SizedBox(height: 8.0)),
+                                .divide(SizedBox(height: 8.0))
+                                .around(SizedBox(height: 8.0)),
                           ),
                         ),
                       ),

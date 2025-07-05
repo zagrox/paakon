@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'web_bar_model.dart';
 export 'web_bar_model.dart';
@@ -26,7 +27,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
     super.initState();
     _model = createModel(context, () => WebBarModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,19 +40,19 @@ class _WebBarWidgetState extends State<WebBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxHeight: 100.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +66,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -78,7 +79,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
                             child: Text(
                               'پاکن',
@@ -88,7 +89,6 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                     fontFamily: 'Peyda',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -110,14 +110,14 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('blog');
+                            context.pushNamed(BlogWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -130,7 +130,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'خدمات',
@@ -141,7 +141,6 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -164,7 +163,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -175,7 +174,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                               size: 28.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'تعرفه',
@@ -186,7 +185,6 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),
@@ -208,7 +206,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -219,7 +217,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                               size: 28.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'سوالات',
@@ -230,7 +228,6 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),
@@ -252,14 +249,14 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('blog');
+                            context.pushNamed(BlogWidget.routeName);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -272,7 +269,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                 size: 28.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'بلاگ',
@@ -283,7 +280,6 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -292,7 +288,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                         ),
                       ),
                     ),
-                ].divide(const SizedBox(width: 8.0)),
+                ].divide(SizedBox(width: 8.0)),
               ),
             ),
             Flexible(
@@ -375,9 +371,9 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'Account',
+                          AccountWidget.routeName,
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                             ),
@@ -405,7 +401,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('welcome');
+                        context.pushNamed(WelcomeWidget.routeName);
                       },
                       child: Icon(
                         Icons.play_circle_outline,
@@ -414,7 +410,7 @@ class _WebBarWidgetState extends State<WebBarWidget> {
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(width: 8.0)).around(const SizedBox(width: 8.0)),
+                ].divide(SizedBox(width: 8.0)).around(SizedBox(width: 8.0)),
               ),
             ),
           ],

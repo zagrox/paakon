@@ -11,6 +11,9 @@ export 'chat_model.dart';
 class ChatWidget extends StatefulWidget {
   const ChatWidget({super.key});
 
+  static String routeName = 'chat';
+  static String routePath = '/chat';
+
   @override
   State<ChatWidget> createState() => _ChatWidgetState();
 }
@@ -25,7 +28,7 @@ class _ChatWidgetState extends State<ChatWidget> {
     super.initState();
     _model = createModel(context, () => ChatModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -41,9 +44,10 @@ class _ChatWidgetState extends State<ChatWidget> {
         title: 'Chat with Paakon',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -58,18 +62,18 @@ class _ChatWidgetState extends State<ChatWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
-                        updateCallback: () => setState(() {}),
-                        child: const SideNavWidget(
+                        updateCallback: () => safeSetState(() {}),
+                        child: SideNavWidget(
                           selectnavr: 6,
                         ),
                       ),
                     ),
                   Flexible(
                     child: Container(
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         minHeight: double.infinity,
                       ),
                       decoration: BoxDecoration(
@@ -80,8 +84,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                         children: [
                           wrapWithModel(
                             model: _model.topNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const TopNavWidget(),
+                            updateCallback: () => safeSetState(() {}),
+                            child: TopNavWidget(),
                           ),
                           Flexible(
                             child: FlutterFlowWebView(
@@ -99,8 +103,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                           ))
                             wrapWithModel(
                               model: _model.mobileNavModel,
-                              updateCallback: () => setState(() {}),
-                              child: const MobileNavWidget(
+                              updateCallback: () => safeSetState(() {}),
+                              child: MobileNavWidget(
                                 selectnav: 6,
                               ),
                             ),

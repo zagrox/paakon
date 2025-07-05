@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'breadcrumb_model.dart';
 export 'breadcrumb_model.dart';
@@ -25,7 +26,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
     super.initState();
     _model = createModel(context, () => BreadcrumbModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,15 +40,15 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: 70.0,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: 300.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -56,7 +57,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -64,9 +65,9 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
               highlightColor: Colors.transparent,
               onTap: () async {
                 context.pushNamed(
-                  'Home',
+                  HomeWidget.routeName,
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -80,12 +81,11 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
                       fontFamily: 'Peyda',
                       color: FlutterFlowTheme.of(context).accent2,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -94,7 +94,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -102,9 +102,9 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
               highlightColor: Colors.transparent,
               onTap: () async {
                 context.pushNamed(
-                  'Account',
+                  AccountWidget.routeName,
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -118,12 +118,11 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
                       fontFamily: 'Peyda',
                       color: FlutterFlowTheme.of(context).accent2,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Icon(
               Icons.chevron_right_rounded,
@@ -132,7 +131,7 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Text(
               'paakon://paakon.com${GoRouterState.of(context).uri.toString()}',
               style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -141,7 +140,6 @@ class _BreadcrumbWidgetState extends State<BreadcrumbWidget> {
                     fontSize: 16.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
-                    useGoogleFonts: false,
                   ),
             ),
           ),

@@ -24,7 +24,7 @@ class _LogoMobileWidgetState extends State<LogoMobileWidget> {
     super.initState();
     _model = createModel(context, () => LogoMobileModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,7 +39,7 @@ class _LogoMobileWidgetState extends State<LogoMobileWidget> {
     return Container(
       width: 55.0,
       height: 55.0,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),

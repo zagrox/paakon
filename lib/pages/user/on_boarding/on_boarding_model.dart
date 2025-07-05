@@ -9,17 +9,14 @@ class OnBoardingModel extends FlutterFlowModel<OnBoardingWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataE05 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataE05 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataE05 = '';
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

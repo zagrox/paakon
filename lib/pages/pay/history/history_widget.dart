@@ -6,12 +6,16 @@ import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'history_model.dart';
 export 'history_model.dart';
 
 class HistoryWidget extends StatefulWidget {
   const HistoryWidget({super.key});
+
+  static String routeName = 'history';
+  static String routePath = '/history';
 
   @override
   State<HistoryWidget> createState() => _HistoryWidgetState();
@@ -27,7 +31,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
     super.initState();
     _model = createModel(context, () => HistoryModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -43,9 +47,10 @@ class _HistoryWidgetState extends State<HistoryWidget> {
         title: 'history',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -60,11 +65,11 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
-                        updateCallback: () => setState(() {}),
-                        child: const SideNavWidget(
+                        updateCallback: () => safeSetState(() {}),
+                        child: SideNavWidget(
                           selectnavr: 8,
                         ),
                       ),
@@ -79,15 +84,15 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                         children: [
                           wrapWithModel(
                             model: _model.topNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const TopNavWidget(),
+                            updateCallback: () => safeSetState(() {}),
+                            child: TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -101,7 +106,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -110,7 +115,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -128,10 +133,9 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  const TextSpan(
+                                                  TextSpan(
                                                     text: 'حساب',
                                                     style: TextStyle(),
                                                   )
@@ -145,21 +149,20 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
                                           ),
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'purchase',
+                                                    PurchaseWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -171,17 +174,17 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                                   );
                                                 },
                                                 text: 'خرید اعتبار',
-                                                icon: const Icon(
+                                                icon: Icon(
                                                   Icons.done_all_rounded,
                                                   size: 24.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 55.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 32.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(4.0, 0.0,
                                                               4.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -197,15 +200,14 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                                                     context)
                                                                 .primaryBtnText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(4.0),
                                                     bottomRight:
@@ -228,29 +230,31 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: wrapWithModel(
                                         model: _model.infoCreditModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: const InfoCreditWidget(),
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: InfoCreditWidget(),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(16.0),
+                                      padding: EdgeInsets.all(16.0),
                                       child: wrapWithModel(
                                         model: _model.ordersTableModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: const OrdersTableWidget(),
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: OrdersTableWidget(),
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 8.0))
-                                      .around(const SizedBox(height: 8.0)),
+                                      .divide(SizedBox(height: 8.0))
+                                      .around(SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -262,8 +266,8 @@ class _HistoryWidgetState extends State<HistoryWidget> {
                           ))
                             wrapWithModel(
                               model: _model.mobileNavModel,
-                              updateCallback: () => setState(() {}),
-                              child: const MobileNavWidget(
+                              updateCallback: () => safeSetState(() {}),
+                              child: MobileNavWidget(
                                 selectnav: 8,
                               ),
                             ),

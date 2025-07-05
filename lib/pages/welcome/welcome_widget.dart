@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -9,6 +10,9 @@ export 'welcome_model.dart';
 
 class WelcomeWidget extends StatefulWidget {
   const WelcomeWidget({super.key});
+
+  static String routeName = 'welcome';
+  static String routePath = '/welcome';
 
   @override
   State<WelcomeWidget> createState() => _WelcomeWidgetState();
@@ -24,7 +28,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
     super.initState();
     _model = createModel(context, () => WelcomeModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -40,9 +44,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
         title: 'به پاکن خوش آمدید',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -54,14 +59,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                      child: Container(
                         width: double.infinity,
                         height: 500.0,
                         child: Stack(
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 30.0),
                               child: PageView(
                                 controller: _model.pageViewController ??=
@@ -69,7 +74,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(12.0),
+                                    padding: EdgeInsets.all(12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -79,7 +84,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -95,7 +100,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             'پاکسازی انبوه',
@@ -107,13 +112,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 0.0),
                                           child: Text(
                                             'لیست آدرس مخاطبین خود را آپلود کنید و ایمیل های معتبر را شناسایی کنید.',
@@ -123,7 +127,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -131,7 +134,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(12.0),
+                                    padding: EdgeInsets.all(12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -141,7 +144,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -157,7 +160,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             'کاوش ایمیل',
@@ -169,13 +172,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 0.0),
                                           child: Text(
                                             'ایمیل دلخواه را وارد کنید تا مشخصات کاربری شامل نام کامل و تصویر پروفایل را دریافت کنید.',
@@ -185,7 +187,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -193,7 +194,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(12.0),
+                                    padding: EdgeInsets.all(12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -203,7 +204,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -219,7 +220,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             'دسترسی سریع',
@@ -231,13 +232,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 0.0),
                                           child: Text(
                                             'با نصب انواع اپلیکیشن های موبایل و دسکتاپ از خدمات پاکن لذت ببرید :)',
@@ -247,7 +247,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -255,7 +254,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(12.0),
+                                    padding: EdgeInsets.all(12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -265,7 +264,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -281,7 +280,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             'شروع کار',
@@ -293,13 +292,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 0.0),
                                           child: Text(
                                             'با چند کلیک در پاکن لیست های خود را با سرعت و اطمینان اعتبارسنجی کنید.',
@@ -309,12 +307,11 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 .override(
                                                   fontFamily: 'Peyda',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(24.0),
+                                          padding: EdgeInsets.all(24.0),
                                           child: Wrap(
                                             spacing: 16.0,
                                             runSpacing: 16.0,
@@ -330,10 +327,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'signup',
+                                                    SignupWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -348,11 +345,11 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 50.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -368,10 +365,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                                     context)
                                                                 .primaryBtnText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 2.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -383,10 +379,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'login',
+                                                    LoginWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -401,26 +397,26 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 50.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Peyda',
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily: 'Peyda',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 2.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -439,9 +435,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child:
                                     smooth_page_indicator.SmoothPageIndicator(
@@ -453,10 +449,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     await _model.pageViewController!
                                         .animateToPage(
                                       i,
-                                      duration: const Duration(milliseconds: 500),
+                                      duration: Duration(milliseconds: 500),
                                       curve: Curves.ease,
                                     );
-                                    setState(() {});
+                                    safeSetState(() {});
                                   },
                                   effect:
                                       smooth_page_indicator.ExpandingDotsEffect(

@@ -45,8 +45,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -64,8 +64,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -83,8 +83,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 170.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 170.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -102,8 +102,8 @@ class _StatGridWidgetState extends State<StatGridWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -115,7 +115,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -129,15 +129,15 @@ class _StatGridWidgetState extends State<StatGridWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
         child: GridView(
           padding: EdgeInsets.zero,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
@@ -155,7 +155,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -169,7 +169,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '32',
                             style: TextStyle(),
                           ),
@@ -181,7 +181,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent4,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -191,7 +190,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -201,10 +199,9 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(
@@ -217,7 +214,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -231,7 +228,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '17',
                             style: TextStyle(),
                           ),
@@ -243,7 +240,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent4,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -253,7 +249,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -263,7 +258,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ],
@@ -282,7 +276,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -296,7 +290,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '12',
                             style: TextStyle(),
                           ),
@@ -309,7 +303,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -319,7 +312,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -329,10 +321,9 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(
@@ -348,7 +339,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -362,7 +353,7 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '2',
                             style: TextStyle(),
                           ),
@@ -375,7 +366,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -385,7 +375,6 @@ class _StatGridWidgetState extends State<StatGridWidget>
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -395,10 +384,9 @@ class _StatGridWidgetState extends State<StatGridWidget>
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ).animateOnPageLoad(

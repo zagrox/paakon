@@ -16,6 +16,9 @@ class OnBoardingWidget extends StatefulWidget {
 
   final String? currentImg;
 
+  static String routeName = 'onBoarding';
+  static String routePath = '/onBoarding';
+
   @override
   State<OnBoardingWidget> createState() => _OnBoardingWidgetState();
 }
@@ -30,7 +33,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
     super.initState();
     _model = createModel(context, () => OnBoardingModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,21 +49,22 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
         title: 'onBoarding',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all(24.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -82,9 +86,10 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               onTap: () async {
                                 await UsersTable().update(
                                   data: {
-                                    'profile_pic': _model.uploadedFileUrl,
+                                    'profile_pic':
+                                        _model.uploadedFileUrl_uploadDataE05,
                                   },
-                                  matchingRows: (rows) => rows.eq(
+                                  matchingRows: (rows) => rows.eqOrNull(
                                     'id',
                                     currentUserUid,
                                   ),
@@ -94,7 +99,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.network(
                                   _model.isNewImgUploaded
-                                      ? _model.uploadedFileUrl
+                                      ? _model.uploadedFileUrl_uploadDataE05
                                       : widget.currentImg!,
                                   width: 150.0,
                                   height: 150.0,
@@ -115,7 +120,8 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
+                                safeSetState(() => _model
+                                    .isDataUploading_uploadDataE05 = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -136,33 +142,34 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                     selectedFiles: selectedMedia,
                                   );
                                 } finally {
-                                  _model.isDataUploading = false;
+                                  _model.isDataUploading_uploadDataE05 = false;
                                 }
                                 if (selectedUploadedFiles.length ==
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
-                                  setState(() {
-                                    _model.uploadedLocalFile =
+                                  safeSetState(() {
+                                    _model.uploadedLocalFile_uploadDataE05 =
                                         selectedUploadedFiles.first;
-                                    _model.uploadedFileUrl = downloadUrls.first;
+                                    _model.uploadedFileUrl_uploadDataE05 =
+                                        downloadUrls.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
 
                               _model.isNewImgUploaded = true;
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             text: 'انتخاب تصویر',
                             options: FFButtonOptions(
                               width: 150.0,
                               height: 48.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).info,
                               textStyle: FlutterFlowTheme.of(context)
@@ -172,10 +179,9 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -183,21 +189,21 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                             ),
                           ),
                         ]
-                            .divide(const SizedBox(height: 12.0))
-                            .around(const SizedBox(height: 12.0)),
+                            .divide(SizedBox(height: 12.0))
+                            .around(SizedBox(height: 12.0)),
                       ),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await UsersTable().update(
                           data: {
-                            'profile_pic': _model.uploadedFileUrl,
+                            'profile_pic': _model.uploadedFileUrl_uploadDataE05,
                           },
-                          matchingRows: (rows) => rows.eq(
+                          matchingRows: (rows) => rows.eqOrNull(
                             'id',
                             currentUserUid,
                           ),
@@ -207,10 +213,10 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 70.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleLarge
@@ -219,10 +225,9 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               color:
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

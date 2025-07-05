@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 class TransactionModel extends FlutterFlowModel<TransactionWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -30,7 +29,6 @@ class TransactionModel extends FlutterFlowModel<TransactionWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     transactionDetailsModel.dispose();

@@ -2,6 +2,7 @@ import '/comp/nav/mobile_nav/mobile_nav_widget.dart';
 import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'edit_widget.dart' show EditWidget;
 import 'package:flutter/material.dart';
 
@@ -12,15 +13,14 @@ class EditModel extends FlutterFlowModel<EditWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
   late TopNavModel topNavModel;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataE06 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataE06 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataE06 = '';
 
   // Model for mobileNav component.
   late MobileNavModel mobileNavModel;
@@ -34,7 +34,6 @@ class EditModel extends FlutterFlowModel<EditWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     mobileNavModel.dispose();

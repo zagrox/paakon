@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -30,7 +31,7 @@ class _TopNavWidgetState extends State<TopNavWidget> {
     super.initState();
     _model = createModel(context, () => TopNavModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -45,7 +46,7 @@ class _TopNavWidgetState extends State<TopNavWidget> {
     return FutureBuilder<List<StatsRow>>(
       future: FFAppState().userStat(
         requestFn: () => StatsTable().querySingleRow(
-          queryFn: (q) => q.eq(
+          queryFn: (q) => q.eqOrNull(
             'user',
             currentUserUid,
           ),
@@ -73,7 +74,7 @@ class _TopNavWidgetState extends State<TopNavWidget> {
 
         return Container(
           height: 80.0,
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -85,7 +86,7 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                 desktop: false,
               ))
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -93,9 +94,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'Account',
+                        AccountWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -124,9 +125,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     context.pushNamed(
-                      'history',
+                      HistoryWidget.routeName,
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -146,7 +147,6 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                                     color: FlutterFlowTheme.of(context).accent3,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                         TextSpan(
@@ -154,14 +154,13 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                             userTopBarStatsRow?.currentCredit?.toString(),
                             '0',
                           ),
-                          style: const TextStyle(),
+                          style: TextStyle(),
                         )
                       ],
                       style: FlutterFlowTheme.of(context).labelSmall.override(
                             fontFamily: 'Peyda',
                             color: FlutterFlowTheme.of(context).primary,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                     textAlign: TextAlign.end,
@@ -186,9 +185,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                   ),
                   onPressed: () async {
                     context.pushNamed(
-                      'purchase',
+                      PurchaseWidget.routeName,
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -214,9 +213,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                   ),
                   onPressed: () async {
                     context.pushNamed(
-                      'chat',
+                      ChatWidget.routeName,
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -232,14 +231,13 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                         fontFamily: 'Peyda',
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                 ),
                 showBadge: true,
                 shape: badges.BadgeShape.circle,
                 badgeColor: FlutterFlowTheme.of(context).primary,
                 elevation: 3.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                 position: badges.BadgePosition.topEnd(),
                 animationType: badges.BadgeAnimationType.scale,
                 toAnimate: true,
@@ -256,9 +254,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                   ),
                   onPressed: () async {
                     context.pushNamed(
-                      'notification',
+                      NotificationWidget.routeName,
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -281,9 +279,9 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                 ),
                 onPressed: () async {
                   context.pushNamed(
-                    'profile',
+                    ProfileWidget.routeName,
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -292,7 +290,7 @@ class _TopNavWidgetState extends State<TopNavWidget> {
                   );
                 },
               ),
-            ].divide(const SizedBox(width: 8.0)).addToEnd(const SizedBox(width: 12.0)),
+            ].divide(SizedBox(width: 8.0)).addToEnd(SizedBox(width: 12.0)),
           ),
         );
       },

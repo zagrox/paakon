@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 class HomeModel extends FlutterFlowModel<HomeWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for webBar component.
   late WebBarModel webBarModel;
   // Model for StartNow component.
@@ -25,7 +24,6 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     webBarModel.dispose();
     startNowModel.dispose();
     mobileNavModel.dispose();

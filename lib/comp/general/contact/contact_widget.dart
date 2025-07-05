@@ -25,7 +25,7 @@ class _ContactWidgetState extends State<ContactWidget> {
     super.initState();
     _model = createModel(context, () => ContactModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,10 +39,10 @@ class _ContactWidgetState extends State<ContactWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: 130.0,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: double.infinity,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +50,7 @@ class _ContactWidgetState extends State<ContactWidget> {
           Expanded(
             child: Container(
               width: 120.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 500.0,
               ),
               decoration: BoxDecoration(
@@ -62,7 +62,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14.0),
+                padding: EdgeInsets.all(14.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +75,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
                         'تماس با ما',
                         textAlign: TextAlign.center,
@@ -83,7 +83,6 @@ class _ContactWidgetState extends State<ContactWidget> {
                               fontFamily: 'Peyda',
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -95,7 +94,7 @@ class _ContactWidgetState extends State<ContactWidget> {
           Expanded(
             child: Container(
               width: 120.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 500.0,
               ),
               decoration: BoxDecoration(
@@ -107,7 +106,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14.0),
+                padding: EdgeInsets.all(14.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -120,7 +119,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
                         'ارسال ایمیل',
                         textAlign: TextAlign.center,
@@ -128,7 +127,6 @@ class _ContactWidgetState extends State<ContactWidget> {
                               fontFamily: 'Peyda',
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -140,7 +138,7 @@ class _ContactWidgetState extends State<ContactWidget> {
           Expanded(
             child: Container(
               width: 120.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 500.0,
               ),
               decoration: BoxDecoration(
@@ -152,20 +150,20 @@ class _ContactWidgetState extends State<ContactWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14.0),
+                padding: EdgeInsets.all(14.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.play_circle_outline,
                       color: Color(0xFF5C79C1),
                       size: 36.0,
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
                         'آموزش کار',
                         textAlign: TextAlign.center,
@@ -173,7 +171,6 @@ class _ContactWidgetState extends State<ContactWidget> {
                               fontFamily: 'Peyda',
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -182,7 +179,7 @@ class _ContactWidgetState extends State<ContactWidget> {
               ),
             ),
           ),
-        ].divide(const SizedBox(width: 8.0)),
+        ].divide(SizedBox(width: 8.0)),
       ),
     );
   }

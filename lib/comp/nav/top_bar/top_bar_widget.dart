@@ -29,7 +29,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
     super.initState();
     _model = createModel(context, () => TopBarModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,17 +44,17 @@ class _TopBarWidgetState extends State<TopBarWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(1.0, -1.0),
+      alignment: AlignmentDirectional(1.0, -1.0),
       child: Container(
         height: 110.0,
-        decoration: const BoxDecoration(),
+        decoration: BoxDecoration(),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             if (FFAppState().navOpen == true)
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Visibility(
                     visible: responsiveVisibility(
                       context: context,
@@ -63,28 +63,28 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                     ),
                     child: wrapWithModel(
                       model: _model.breadcrumbModel,
-                      updateCallback: () => setState(() {}),
-                      child: const BreadcrumbWidget(),
+                      updateCallback: () => safeSetState(() {}),
+                      child: BreadcrumbWidget(),
                     ),
                   ),
                 ),
               ),
             wrapWithModel(
               model: _model.modeModel,
-              updateCallback: () => setState(() {}),
-              child: const ModeWidget(),
+              updateCallback: () => safeSetState(() {}),
+              child: ModeWidget(),
             ),
             wrapWithModel(
               model: _model.profileAvatarModel,
-              updateCallback: () => setState(() {}),
-              child: const ProfileAvatarWidget(),
+              updateCallback: () => safeSetState(() {}),
+              child: ProfileAvatarWidget(),
             ),
             wrapWithModel(
               model: _model.remainCreditsModel,
-              updateCallback: () => setState(() {}),
-              child: const RemainCreditsWidget(),
+              updateCallback: () => safeSetState(() {}),
+              child: RemainCreditsWidget(),
             ),
-          ].divide(const SizedBox(width: 10.0)),
+          ].divide(SizedBox(width: 10.0)),
         ),
       ),
     );

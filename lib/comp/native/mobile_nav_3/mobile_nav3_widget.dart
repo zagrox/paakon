@@ -25,7 +25,7 @@ class _MobileNav3WidgetState extends State<MobileNav3Widget> {
     super.initState();
     _model = createModel(context, () => MobileNav3Model());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -52,14 +52,14 @@ class _MobileNav3WidgetState extends State<MobileNav3Widget> {
             BoxShadow(
               blurRadius: 0.0,
               color: FlutterFlowTheme.of(context).lineColor,
-              offset: const Offset(
+              offset: Offset(
                 0.0,
                 -1.0,
               ),
             )
           ],
         ),
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 34.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,

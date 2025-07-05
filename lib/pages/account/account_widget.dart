@@ -10,11 +10,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'account_model.dart';
 export 'account_model.dart';
 
 class AccountWidget extends StatefulWidget {
   const AccountWidget({super.key});
+
+  static String routeName = 'Account';
+  static String routePath = '/account';
 
   @override
   State<AccountWidget> createState() => _AccountWidgetState();
@@ -30,7 +34,7 @@ class _AccountWidgetState extends State<AccountWidget> {
     super.initState();
     _model = createModel(context, () => AccountModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -74,9 +78,10 @@ class _AccountWidgetState extends State<AccountWidget> {
             title: 'My Paakon Account',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -91,11 +96,11 @@ class _AccountWidgetState extends State<AccountWidget> {
                         tablet: false,
                       ))
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.sideNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const SideNavWidget(
+                            updateCallback: () => safeSetState(() {}),
+                            child: SideNavWidget(
                               selectnavr: 1,
                             ),
                           ),
@@ -114,7 +119,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(0.0),
@@ -131,12 +136,13 @@ class _AccountWidgetState extends State<AccountWidget> {
                                       children: [
                                         wrapWithModel(
                                           model: _model.topNavModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: const TopNavWidget(),
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: TopNavWidget(),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   18.0, 0.0, 18.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -144,7 +150,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 12.0, 8.0, 12.0),
                                                 child: RichText(
@@ -164,8 +170,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                       'Peyda',
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                       TextSpan(
@@ -183,7 +187,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -192,15 +195,15 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                 model:
                                                     _model.iconsDashboardModel,
                                                 updateCallback: () =>
-                                                    setState(() {}),
-                                                child: const IconsDashboardWidget(),
+                                                    safeSetState(() {}),
+                                                child: IconsDashboardWidget(),
                                               ),
                                             ],
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -229,7 +232,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(12.0),
+                                                        EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -247,7 +250,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -267,8 +270,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                     .of(context)
                                                                 .displaySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  font: GoogleFonts
+                                                                      .urbanist(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .displaySmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -279,12 +290,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displaySmall
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -310,8 +325,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -340,7 +353,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(12.0),
+                                                        EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -358,7 +371,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -378,8 +391,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                     .of(context)
                                                                 .displaySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  font: GoogleFonts
+                                                                      .urbanist(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .displaySmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -390,12 +411,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displaySmall
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -421,8 +446,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -450,7 +473,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(12.0),
+                                                        EdgeInsets.all(12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -468,7 +491,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -488,8 +511,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                     .of(context)
                                                                 .displaySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  font: GoogleFonts
+                                                                      .urbanist(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .displaySmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -500,12 +531,16 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displaySmall
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -531,8 +566,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -542,39 +575,39 @@ class _AccountWidgetState extends State<AccountWidget> {
                                                 ),
                                               ),
                                             ]
-                                                .divide(const SizedBox(width: 18.0))
-                                                .around(const SizedBox(width: 18.0)),
+                                                .divide(SizedBox(width: 18.0))
+                                                .around(SizedBox(width: 18.0)),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: wrapWithModel(
                                             model: _model.foldersModel,
                                             updateCallback: () =>
-                                                setState(() {}),
-                                            child: const FoldersWidget(),
+                                                safeSetState(() {}),
+                                            child: FoldersWidget(),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(18.0),
+                                          padding: EdgeInsets.all(18.0),
                                           child: wrapWithModel(
                                             model: _model.startNowModel,
                                             updateCallback: () =>
-                                                setState(() {}),
-                                            child: const StartNowWidget(),
+                                                safeSetState(() {}),
+                                            child: StartNowWidget(),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
                                           child: wrapWithModel(
                                             model: _model.contactModel,
                                             updateCallback: () =>
-                                                setState(() {}),
-                                            child: const ContactWidget(),
+                                                safeSetState(() {}),
+                                            child: ContactWidget(),
                                           ),
                                         ),
                                       ],
@@ -589,8 +622,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ))
                                 wrapWithModel(
                                   model: _model.mobileNavModel,
-                                  updateCallback: () => setState(() {}),
-                                  child: const MobileNavWidget(
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: MobileNavWidget(
                                     selectnav: 1,
                                   ),
                                 ),

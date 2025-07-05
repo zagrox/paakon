@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'web_mobile_nav_model.dart';
 export 'web_mobile_nav_model.dart';
@@ -31,7 +32,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
     super.initState();
     _model = createModel(context, () => WebMobileNavModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -50,7 +51,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 90.0,
@@ -71,9 +72,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'Account',
+                        AccountWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -98,7 +99,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             size: 30.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('Account');
+                            context.pushNamed(AccountWidget.routeName);
                           },
                         ),
                         Text(
@@ -107,7 +108,6 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -120,9 +120,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'data',
+                        DataWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -147,7 +147,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             size: 30.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('data');
+                            context.pushNamed(DataWidget.routeName);
                           },
                         ),
                         Text(
@@ -156,7 +156,6 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -168,14 +167,14 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                         child: Container(
                           decoration: BoxDecoration(
                             color: widget.selectnav == 10
                                 ? FlutterFlowTheme.of(context).alternate
                                 : FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(14.0),
                               bottomRight: Radius.circular(14.0),
                               topLeft: Radius.circular(0.0),
@@ -183,7 +182,7 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 2.0),
                             child: FlutterFlowIconButton(
                               buttonSize: 56.0,
@@ -198,9 +197,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               ),
                               onPressed: () async {
                                 context.pushNamed(
-                                  'bulk',
+                                  BulkWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -219,9 +218,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                         highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed(
-                            'bulk',
+                            BulkWidget.routeName,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -235,7 +234,6 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -248,9 +246,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'purchase',
+                        PurchaseWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -276,9 +274,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           ),
                           onPressed: () async {
                             context.pushNamed(
-                              'purchase',
+                              PurchaseWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -293,7 +291,6 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -306,9 +303,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'profile',
+                        ProfileWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -334,9 +331,9 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                           ),
                           onPressed: () async {
                             context.pushNamed(
-                              'profile',
+                              ProfileWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -351,7 +348,6 @@ class _WebMobileNavWidgetState extends State<WebMobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],

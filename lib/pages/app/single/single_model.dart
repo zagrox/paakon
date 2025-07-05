@@ -13,7 +13,6 @@ class SingleModel extends FlutterFlowModel<SingleWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -33,7 +32,6 @@ class SingleModel extends FlutterFlowModel<SingleWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     singleSearchModel.dispose();

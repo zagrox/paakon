@@ -25,7 +25,7 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
     super.initState();
     _model = createModel(context, () => RemainCreditsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -41,7 +41,7 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
       height: 55.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(60.0),
           topLeft: Radius.circular(0.0),
@@ -49,27 +49,26 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
               child: Text(
                 'مانده اعتبار',
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Peyda',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
             Flexible(
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: Text(
                   '1820',
                   textAlign: TextAlign.end,
@@ -78,13 +77,12 @@ class _RemainCreditsWidgetState extends State<RemainCreditsWidget> {
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
-                        useGoogleFonts: false,
                       ),
                 ),
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Icon(
                 Icons.add,
                 color: FlutterFlowTheme.of(context).accent2,

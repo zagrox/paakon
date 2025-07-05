@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tabs_bar_model.dart';
 export 'tabs_bar_model.dart';
 
@@ -34,8 +35,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -49,7 +51,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,18 +60,18 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
             child: Container(
               width: 100.0,
               height: 100.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 minHeight: 400.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: Column(
                   children: [
                     Align(
-                      alignment: const Alignment(0.0, 0),
+                      alignment: Alignment(0.0, 0),
                       child: FlutterFlowButtonTabBar(
                         useToggleButtonStyle: true,
                         labelStyle:
@@ -78,9 +80,8 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: false,
                                 ),
-                        unselectedLabelStyle: const TextStyle(),
+                        unselectedLabelStyle: TextStyle(),
                         labelColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
                         unselectedLabelColor:
@@ -96,9 +97,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                         borderRadius: 8.0,
                         elevation: 0.0,
                         buttonMargin:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                        padding: const EdgeInsets.all(3.0),
-                        tabs: const [
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        padding: EdgeInsets.all(3.0),
+                        tabs: [
                           Tab(
                             text: 'در حال پاکسازی',
                           ),
@@ -120,12 +121,12 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                         controller: _model.tabBarController,
                         children: [
                           Stack(
-                            alignment: const AlignmentDirectional(-0.0, 0.0),
+                            alignment: AlignmentDirectional(-0.0, 0.0),
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.signal_cellular_no_sim_outlined,
@@ -136,7 +137,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 50.0),
                                 child: Text(
                                   'فایل شامل لیست ایمیل های خود را انتخاب کنید',
@@ -145,12 +146,11 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                       .override(
                                         fontFamily: 'Peyda',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   '(مشاهده نمونه فایل)',
                                   style: FlutterFlowTheme.of(context)
@@ -161,14 +161,13 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                             .accent2,
                                         letterSpacing: 0.0,
                                         decoration: TextDecoration.underline,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 48.0, 0.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
@@ -177,10 +176,10 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     text: 'آپلود لیست',
                                     options: FFButtonOptions(
                                       height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -191,10 +190,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -209,14 +207,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 28.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -233,7 +231,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -247,7 +245,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -262,8 +260,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -272,10 +278,15 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -286,8 +297,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -295,6 +314,11 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -304,7 +328,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -327,7 +351,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -371,14 +395,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -395,7 +419,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -409,7 +433,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -424,8 +448,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -434,10 +466,15 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -448,8 +485,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -457,6 +502,11 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -466,7 +516,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -489,7 +539,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -533,14 +583,14 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 7.0,
                                         color: Color(0x2F1D2429),
@@ -557,7 +607,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -571,7 +621,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -586,8 +636,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -596,10 +654,15 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -610,8 +673,16 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -619,6 +690,11 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -628,7 +704,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -651,7 +727,7 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -697,9 +773,9 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                             ],
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, -1.0),
+                            alignment: AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Text(
                                 'فایل در حال پاکسازی وجود ندارد. لیست خود را انتخاب کنید.',
                                 style: FlutterFlowTheme.of(context)
@@ -709,7 +785,6 @@ class _TabsBarWidgetState extends State<TabsBarWidget>
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),

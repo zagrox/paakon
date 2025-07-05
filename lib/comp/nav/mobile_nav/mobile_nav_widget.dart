@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'mobile_nav_model.dart';
 export 'mobile_nav_model.dart';
@@ -31,7 +32,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
     super.initState();
     _model = createModel(context, () => MobileNavModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -50,7 +51,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 90.0,
@@ -71,9 +72,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'Account',
+                        AccountWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -98,7 +99,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                             size: 24.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('Account');
+                            context.pushNamed(AccountWidget.routeName);
                           },
                         ),
                         Text(
@@ -107,7 +108,6 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -120,9 +120,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'bulk',
+                        BulkWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -147,7 +147,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                             size: 24.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('bulk');
+                            context.pushNamed(BulkWidget.routeName);
                           },
                         ),
                         Text(
@@ -156,7 +156,6 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -169,9 +168,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'data',
+                        DataWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -196,7 +195,7 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                             size: 24.0,
                           ),
                           onPressed: () async {
-                            context.pushNamed('data');
+                            context.pushNamed(DataWidget.routeName);
                           },
                         ),
                         Text(
@@ -205,7 +204,6 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -218,9 +216,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'purchase',
+                        PurchaseWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -246,9 +244,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           ),
                           onPressed: () async {
                             context.pushNamed(
-                              'purchase',
+                              PurchaseWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -263,7 +261,6 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -276,9 +273,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
-                        'profile',
+                        ProfileWidget.routeName,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -304,9 +301,9 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                           ),
                           onPressed: () async {
                             context.pushNamed(
-                              'profile',
+                              ProfileWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -321,7 +318,6 @@ class _MobileNavWidgetState extends State<MobileNavWidget> {
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],

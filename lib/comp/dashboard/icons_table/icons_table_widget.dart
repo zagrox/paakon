@@ -25,7 +25,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
     super.initState();
     _model = createModel(context, () => IconsTableModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -40,12 +40,12 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
     return Container(
       width: double.infinity,
       height: 145.0,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -55,7 +55,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -67,7 +67,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.create_new_folder_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -81,7 +81,6 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Peyda',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -93,7 +92,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -105,7 +104,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_special_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -119,7 +118,6 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Peyda',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -131,7 +129,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -143,7 +141,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_shared_outlined,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -157,7 +155,6 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Peyda',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -169,7 +166,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 75.0,
@@ -181,7 +178,7 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.add_card,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -195,13 +192,12 @@ class _IconsTableWidgetState extends State<IconsTableWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Peyda',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
               ),
             ),
-          ].divide(const SizedBox(width: 12.0)),
+          ].divide(SizedBox(width: 12.0)),
         ),
       ),
     );

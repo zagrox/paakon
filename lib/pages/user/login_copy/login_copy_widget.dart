@@ -2,6 +2,7 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,9 @@ export 'login_copy_model.dart';
 
 class LoginCopyWidget extends StatefulWidget {
   const LoginCopyWidget({super.key});
+
+  static String routeName = 'loginCopy';
+  static String routePath = '/login2';
 
   @override
   State<LoginCopyWidget> createState() => _LoginCopyWidgetState();
@@ -39,7 +43,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
     ));
     _model.userPasswordFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -57,9 +61,10 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
         title: 'Paakon Account Login',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -74,17 +79,17 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                   children: [
                     Container(
                       height: 110.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(4.0),
                                 child: Image.asset(
@@ -96,7 +101,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -110,7 +115,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         .override(
                                           fontFamily: 'Peyda',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Text(
@@ -122,7 +126,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -136,7 +139,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
@@ -149,17 +152,17 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: Container(
                                 width: double.infinity,
-                                constraints: const BoxConstraints(
+                                constraints: BoxConstraints(
                                   maxWidth: 500.0,
                                 ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -168,7 +171,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.all(14.0),
+                                        padding: EdgeInsets.all(14.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -186,11 +189,10 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
@@ -207,7 +209,8 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     return;
                                                   }
 
-                                                  context.goNamedAuth('Account',
+                                                  context.goNamedAuth(
+                                                      AccountWidget.routeName,
                                                       context.mounted);
                                                 },
                                                 child: Container(
@@ -217,7 +220,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -237,7 +240,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     ),
                                                   ),
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: FaIcon(
                                                     FontAwesomeIcons.google,
@@ -258,7 +261,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                             .lineColor,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -266,7 +269,8 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('password');
+                                            context.pushNamed(
+                                                PasswordWidget.routeName);
                                           },
                                           child: Text(
                                             'ورود به حساب با ایمیل کاربری',
@@ -278,13 +282,12 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                           context)
                                                       .secondaryText,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -301,7 +304,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     .override(
                                                       fontFamily: 'Peyda',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             alignLabelWithHint: false,
                                             hintText: 'Email',
@@ -315,7 +317,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -328,7 +329,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -336,7 +337,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -345,7 +346,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -357,7 +358,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 24.0, 0.0, 24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -365,7 +366,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                               .override(
                                                 fontFamily: 'Peyda',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           keyboardType:
                                               TextInputType.emailAddress,
@@ -375,7 +375,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -392,7 +392,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     .override(
                                                       fontFamily: 'Peyda',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             alignLabelWithHint: false,
                                             hintText: 'Password',
@@ -406,7 +405,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -419,7 +417,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -427,7 +425,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                   BorderRadius.circular(40.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -436,7 +434,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
@@ -448,10 +446,10 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 24.0, 0.0, 24.0),
                                             suffixIcon: InkWell(
-                                              onTap: () => setState(
+                                              onTap: () => safeSetState(
                                                 () => _model
                                                         .userPasswordVisibility =
                                                     !_model
@@ -464,7 +462,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
-                                                color: const Color(0xFF757575),
+                                                color: Color(0xFF757575),
                                                 size: 22.0,
                                               ),
                                             ),
@@ -474,7 +472,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                               .override(
                                                 fontFamily: 'Peyda',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .userPasswordTextControllerValidator
@@ -482,7 +479,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.all(14.0),
+                                        padding: EdgeInsets.all(14.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -509,16 +506,22 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                 value: _model.checkboxValue ??=
                                                     true,
                                                 onChanged: (newValue) async {
-                                                  setState(() =>
+                                                  safeSetState(() =>
                                                       _model.checkboxValue =
                                                           newValue!);
                                                 },
-                                                side: BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                ),
+                                                side: (FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText !=
+                                                        null)
+                                                    ? BorderSide(
+                                                        width: 2,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      )
+                                                    : null,
                                                 activeColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -535,18 +538,17 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                       .override(
                                                         fontFamily: 'Peyda',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             4.0, 14.0, 4.0, 14.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            Function() navigate = () {};
+                                            Function() _navigate = () {};
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
 
@@ -563,9 +565,10 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                               return;
                                             }
 
-                                            navigate = () =>
+                                            _navigate = () =>
                                                 context.goNamedAuth(
-                                                    'Account', context.mounted);
+                                                    AccountWidget.routeName,
+                                                    context.mounted);
                                             if (_model.checkboxValue!) {
                                               FFAppState().rememberEmail = _model
                                                   .userEmailAddressTextController
@@ -574,26 +577,29 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                   _model
                                                       .userPasswordTextController
                                                       .text;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             } else {
                                               FFAppState().rememberEmail = '';
                                               FFAppState().rememberPassword =
                                                   '';
-                                              setState(() {});
+                                              safeSetState(() {});
                                             }
 
-                                            navigate();
+                                            _navigate();
                                           },
                                           text: 'ورود به حساب',
                                           options: FFButtonOptions(
                                             width: double.infinity,
                                             height: 60.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiary,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle: FlutterFlowTheme.of(
@@ -606,7 +612,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                       .primaryBtnText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
-                                                  useGoogleFonts: false,
                                                 ),
                                             borderSide: BorderSide(
                                               color:
@@ -619,7 +624,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 24.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -627,7 +632,8 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('password');
+                                            context.pushNamed(
+                                                PasswordWidget.routeName);
                                           },
                                           child: Text(
                                             'بازیابی گذرواژه حساب',
@@ -639,31 +645,32 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                           context)
                                                       .accent3,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
-                                          context.pushNamed('Home');
+                                          context
+                                              .pushNamed(HomeWidget.routeName);
                                         },
                                         text: 'پاکن .کام',
                                         icon: Icon(
                                           Icons.phonelink_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
                                           size: 20.0,
                                         ),
                                         options: FFButtonOptions(
                                           width: double.infinity,
                                           height: 48.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 12.0, 24.0, 12.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
+                                          iconColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -675,7 +682,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -701,24 +707,26 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
-                                          context.pushNamed('signup');
+                                          context.pushNamed(
+                                              SignupWidget.routeName);
                                         },
                                         text: 'ساخت حساب',
                                         icon: Icon(
                                           Icons.add,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
                                           size: 20.0,
                                         ),
                                         options: FFButtonOptions(
                                           width: double.infinity,
                                           height: 48.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 12.0, 24.0, 12.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
+                                          iconColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -730,10 +738,9 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -748,16 +755,16 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(height: 8.0))
-                                        .addToStart(const SizedBox(height: 8.0))
-                                        .addToEnd(const SizedBox(height: 8.0)),
+                                        .divide(SizedBox(height: 8.0))
+                                        .addToStart(SizedBox(height: 8.0))
+                                        .addToEnd(SizedBox(height: 8.0)),
                                   ),
                                 ),
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(height: 8.0))
-                              .around(const SizedBox(height: 8.0)),
+                              .divide(SizedBox(height: 8.0))
+                              .around(SizedBox(height: 8.0)),
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,7 +9,7 @@ import 'auth/supabase_auth/supabase_user_provider.dart';
 import 'auth/supabase_auth/auth_util.dart';
 
 import '/backend/supabase/supabase.dart';
-import 'flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 
@@ -26,19 +27,25 @@ void main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
+}
+
+class MyAppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
 
 class _MyAppState extends State<MyApp> {
@@ -48,7 +55,19 @@ class _MyAppState extends State<MyApp> {
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
+  String getRoute([RouteMatch? routeMatch]) {
+    final RouteMatch lastMatch =
+        routeMatch ?? _router.routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : _router.routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 
+  List<String> getRouteStack() =>
+      _router.routerDelegate.currentConfiguration.matches
+          .map((e) => getRoute(e))
+          .toList();
   late Stream<BaseAuthUser> userStream;
 
   @override
@@ -69,10 +88,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   void setLocale(String language) {
-    setState(() => _locale = createLocale(language));
+    safeSetState(() => _locale = createLocale(language));
   }
 
-  void setThemeMode(ThemeMode mode) => setState(() {
+  void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
         FlutterFlowTheme.saveThemeMode(mode);
       });
@@ -80,12 +99,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Paakon',
-      localizationsDelegates: const [
+      scrollBehavior: MyAppScrollBehavior(),
+      localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
+        FallbackMaterialLocalizationDelegate(),
+        FallbackCupertinoLocalizationDelegate(),
       ],
       locale: _locale,
       supportedLocales: const [

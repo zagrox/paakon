@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'orders_table_model.dart';
 export 'orders_table_model.dart';
@@ -26,7 +27,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
     super.initState();
     _model = createModel(context, () => OrdersTableModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,19 +40,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: 40.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(8.0),
@@ -59,7 +60,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -81,7 +82,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 fontSize: 13.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
-                                useGoogleFonts: false,
                               ),
                         ),
                       ),
@@ -95,7 +95,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               fontSize: 13.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -109,7 +108,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               fontSize: 13.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -131,7 +129,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 fontSize: 13.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
-                                useGoogleFonts: false,
                               ),
                         ),
                       ),
@@ -145,7 +142,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               fontSize: 13.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -169,7 +165,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -188,20 +184,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -212,7 +207,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -228,7 +222,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -245,7 +238,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
@@ -257,9 +249,9 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'transaction',
+                              TransactionWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -287,7 +279,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -306,20 +298,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '5.000',
@@ -330,7 +321,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -346,7 +336,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -363,7 +352,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
@@ -387,7 +375,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -406,20 +394,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '100.000',
@@ -430,7 +417,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -446,7 +432,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -463,7 +448,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
@@ -487,7 +471,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -506,20 +490,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -530,7 +513,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -546,7 +528,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -563,7 +544,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
@@ -587,7 +567,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -606,20 +586,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -630,7 +609,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -646,7 +624,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -663,7 +640,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
@@ -687,7 +663,7 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(14.0, 0.0, 14.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -706,20 +682,19 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 4.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 4.0),
                                 child: Text(
                                   '25.000',
@@ -730,7 +705,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -746,7 +720,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -763,7 +736,6 @@ class _OrdersTableWidgetState extends State<OrdersTableWidget> {
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Peyda',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ),

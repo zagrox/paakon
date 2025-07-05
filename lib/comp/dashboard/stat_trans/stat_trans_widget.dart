@@ -25,7 +25,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
     super.initState();
     _model = createModel(context, () => StatTransModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -39,15 +39,15 @@ class _StatTransWidgetState extends State<StatTransWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: 600.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
         child: GridView(
           padding: EdgeInsets.zero,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
@@ -67,7 +67,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +81,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '32',
                             style: TextStyle(),
                           ),
@@ -93,7 +93,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent2,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -102,7 +101,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                               color: FlutterFlowTheme.of(context).primary,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -112,10 +110,9 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ),
@@ -129,7 +126,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +140,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '18',
                             style: TextStyle(),
                           ),
@@ -155,7 +152,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent2,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -164,7 +160,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                               color: FlutterFlowTheme.of(context).tertiary,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -174,7 +169,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ],
@@ -191,7 +185,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +199,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '12',
                             style: TextStyle(),
                           ),
@@ -217,7 +211,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent2,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -226,7 +219,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                               color: FlutterFlowTheme.of(context).accent2,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -236,10 +228,9 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ),
@@ -253,7 +244,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -267,7 +258,7 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: '2.5',
                             style: TextStyle(),
                           ),
@@ -279,7 +270,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                                   fontFamily: 'Peyda',
                                   color: FlutterFlowTheme.of(context).accent2,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           )
                         ],
@@ -288,7 +278,6 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                               color: FlutterFlowTheme.of(context).secondary,
                               fontSize: 32.0,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -298,10 +287,9 @@ class _StatTransWidgetState extends State<StatTransWidget> {
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Peyda',
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4.0)),
                 ),
               ),
             ),

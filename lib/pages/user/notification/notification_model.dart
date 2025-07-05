@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 class NotificationModel extends FlutterFlowModel<NotificationWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -25,7 +24,6 @@ class NotificationModel extends FlutterFlowModel<NotificationWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     mobileNavModel.dispose();

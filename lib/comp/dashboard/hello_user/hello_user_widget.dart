@@ -26,7 +26,7 @@ class _HelloUserWidgetState extends State<HelloUserWidget> {
     super.initState();
     _model = createModel(context, () => HelloUserModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -40,15 +40,15 @@ class _HelloUserWidgetState extends State<HelloUserWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 550.0,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: double.infinity,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,32 +59,30 @@ class _HelloUserWidgetState extends State<HelloUserWidget> {
                         fontFamily: 'Peyda',
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
-                        useGoogleFonts: false,
                       ),
                 ),
                 wrapWithModel(
                   model: _model.profileAvatarModel,
-                  updateCallback: () => setState(() {}),
-                  child: const ProfileAvatarWidget(),
+                  updateCallback: () => safeSetState(() {}),
+                  child: ProfileAvatarWidget(),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                   child: Text(
                     'کاربر گرامی',
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Peyda',
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ),

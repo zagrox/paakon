@@ -20,7 +20,6 @@ class ReportModel extends FlutterFlowModel<ReportWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -37,7 +36,6 @@ class ReportModel extends FlutterFlowModel<ReportWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     mobileNavModel.dispose();

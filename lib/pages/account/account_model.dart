@@ -18,7 +18,6 @@ class AccountModel extends FlutterFlowModel<AccountWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -47,7 +46,6 @@ class AccountModel extends FlutterFlowModel<AccountWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     iconsDashboardModel.dispose();

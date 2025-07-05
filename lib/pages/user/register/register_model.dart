@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'signup_widget.dart' show SignupWidget;
+import 'register_widget.dart' show RegisterWidget;
 import 'package:flutter/material.dart';
 
-class SignupModel extends FlutterFlowModel<SignupWidget> {
+class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for first_name widget.
@@ -14,14 +14,6 @@ class SignupModel extends FlutterFlowModel<SignupWidget> {
   FocusNode? lastNameFocusNode;
   TextEditingController? lastNameTextController;
   String? Function(BuildContext, String?)? lastNameTextControllerValidator;
-  // State field(s) for business_name widget.
-  FocusNode? businessNameFocusNode;
-  TextEditingController? businessNameTextController;
-  String? Function(BuildContext, String?)? businessNameTextControllerValidator;
-  // State field(s) for business_id widget.
-  FocusNode? businessIdFocusNode;
-  TextEditingController? businessIdTextController;
-  String? Function(BuildContext, String?)? businessIdTextControllerValidator;
   // State field(s) for email_address widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
@@ -36,6 +28,14 @@ class SignupModel extends FlutterFlowModel<SignupWidget> {
   TextEditingController? passwordConfirmTextController;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
+  // State field(s) for business_name widget.
+  FocusNode? businessNameFocusNode;
+  TextEditingController? businessNameTextController;
+  String? Function(BuildContext, String?)? businessNameTextControllerValidator;
+  // State field(s) for business_id widget.
+  FocusNode? businessIdFocusNode;
+  TextEditingController? businessIdTextController;
+  String? Function(BuildContext, String?)? businessIdTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -48,12 +48,6 @@ class SignupModel extends FlutterFlowModel<SignupWidget> {
     lastNameFocusNode?.dispose();
     lastNameTextController?.dispose();
 
-    businessNameFocusNode?.dispose();
-    businessNameTextController?.dispose();
-
-    businessIdFocusNode?.dispose();
-    businessIdTextController?.dispose();
-
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
 
@@ -62,5 +56,11 @@ class SignupModel extends FlutterFlowModel<SignupWidget> {
 
     passwordConfirmFocusNode?.dispose();
     passwordConfirmTextController?.dispose();
+
+    businessNameFocusNode?.dispose();
+    businessNameTextController?.dispose();
+
+    businessIdFocusNode?.dispose();
+    businessIdTextController?.dispose();
   }
 }

@@ -12,7 +12,6 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -29,7 +28,6 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     mobileNavModel.dispose();

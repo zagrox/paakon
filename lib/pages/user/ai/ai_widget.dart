@@ -9,6 +9,9 @@ export 'ai_model.dart';
 class AiWidget extends StatefulWidget {
   const AiWidget({super.key});
 
+  static String routeName = 'ai';
+  static String routePath = '/ai';
+
   @override
   State<AiWidget> createState() => _AiWidgetState();
 }
@@ -26,7 +29,7 @@ class _AiWidgetState extends State<AiWidget> {
     _model.chatTextTextController ??= TextEditingController();
     _model.chatTextFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -42,27 +45,28 @@ class _AiWidgetState extends State<AiWidget> {
         title: 'ai',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 16.0, 8.0, 0.0),
                           child: Container(
                             width: 400.0,
@@ -70,7 +74,7 @@ class _AiWidgetState extends State<AiWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(12.0),
@@ -78,9 +82,9 @@ class _AiWidgetState extends State<AiWidget> {
                               ),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(24.0),
+                                padding: EdgeInsets.all(24.0),
                                 child: Text(
                                   valueOrDefault<String>(
                                     _model.response,
@@ -92,7 +96,6 @@ class _AiWidgetState extends State<AiWidget> {
                                       .override(
                                         fontFamily: 'Peyda',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -102,8 +105,8 @@ class _AiWidgetState extends State<AiWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
-                        child: SizedBox(
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
+                        child: Container(
                           width: 400.0,
                           child: TextFormField(
                             controller: _model.chatTextTextController,
@@ -117,7 +120,6 @@ class _AiWidgetState extends State<AiWidget> {
                                   .override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               alignLabelWithHint: true,
                               hintStyle: FlutterFlowTheme.of(context)
@@ -125,7 +127,6 @@ class _AiWidgetState extends State<AiWidget> {
                                   .override(
                                     fontFamily: 'Peyda',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -162,7 +163,6 @@ class _AiWidgetState extends State<AiWidget> {
                                 .override(
                                   fontFamily: 'Peyda',
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                             textAlign: TextAlign.end,
                             maxLines: null,
@@ -173,7 +173,7 @@ class _AiWidgetState extends State<AiWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await geminiGenerateText(
@@ -184,19 +184,19 @@ class _AiWidgetState extends State<AiWidget> {
                                   () => _model.response = generatedText);
                             });
 
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           text: 'ارسال به ربات',
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.keyboard_outlined,
                             size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: 380.0,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -205,10 +205,9 @@ class _AiWidgetState extends State<AiWidget> {
                                   fontFamily: 'Peyda',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

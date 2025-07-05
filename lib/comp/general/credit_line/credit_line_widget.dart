@@ -25,7 +25,7 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
     super.initState();
     _model = createModel(context, () => CreditLineModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -38,7 +38,7 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: 500.0,
         height: 50.0,
@@ -60,14 +60,13 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
               size: 24.0,
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
               child: Text(
                 'مانده اعتبار',
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Peyda',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
@@ -80,12 +79,11 @@ class _CreditLineWidgetState extends State<CreditLineWidget> {
                       fontSize: 16.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Icon(
                 Icons.add,
                 color: FlutterFlowTheme.of(context).tertiary,

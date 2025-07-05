@@ -24,3 +24,4 @@ export '/pages/user/ai/ai_widget.dart' show AiWidget;
 export '/pages/user/on_boarding/on_boarding_widget.dart' show OnBoardingWidget;
 export '/pages/user/chat/chat_widget.dart' show ChatWidget;
 export '/pages/user/login_copy/login_copy_widget.dart' show LoginCopyWidget;
+export '/pages/user/register/register_widget.dart' show RegisterWidget;

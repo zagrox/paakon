@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'edit_model.dart';
 export 'edit_model.dart';
@@ -18,6 +19,9 @@ class EditWidget extends StatefulWidget {
   });
 
   final String? currentImg;
+
+  static String routeName = 'edit';
+  static String routePath = '/edit';
 
   @override
   State<EditWidget> createState() => _EditWidgetState();
@@ -33,7 +37,7 @@ class _EditWidgetState extends State<EditWidget> {
     super.initState();
     _model = createModel(context, () => EditModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -49,9 +53,10 @@ class _EditWidgetState extends State<EditWidget> {
         title: 'edit',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -66,18 +71,18 @@ class _EditWidgetState extends State<EditWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.sideNavModel,
-                        updateCallback: () => setState(() {}),
-                        child: const SideNavWidget(
+                        updateCallback: () => safeSetState(() {}),
+                        child: SideNavWidget(
                           selectnavr: 6,
                         ),
                       ),
                     ),
                   Flexible(
                     child: Container(
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         minHeight: double.infinity,
                       ),
                       decoration: BoxDecoration(
@@ -88,15 +93,15 @@ class _EditWidgetState extends State<EditWidget> {
                         children: [
                           wrapWithModel(
                             model: _model.topNavModel,
-                            updateCallback: () => setState(() {}),
-                            child: const TopNavWidget(),
+                            updateCallback: () => safeSetState(() {}),
+                            child: TopNavWidget(),
                           ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -110,7 +115,7 @@ class _EditWidgetState extends State<EditWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -119,7 +124,7 @@ class _EditWidgetState extends State<EditWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -137,10 +142,9 @@ class _EditWidgetState extends State<EditWidget> {
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
-                                                  const TextSpan(
+                                                  TextSpan(
                                                     text: ' پروفایل',
                                                     style: TextStyle(),
                                                   )
@@ -151,7 +155,6 @@ class _EditWidgetState extends State<EditWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -159,25 +162,26 @@ class _EditWidgetState extends State<EditWidget> {
                                           Flexible(
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                context.pushNamed('profile');
+                                                context.pushNamed(
+                                                    ProfileWidget.routeName);
                                               },
                                               text: 'پروفایل من',
                                               icon: Icon(
                                                 Icons.manage_accounts_outlined,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
                                                 size: 24.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -190,10 +194,9 @@ class _EditWidgetState extends State<EditWidget> {
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -202,7 +205,7 @@ class _EditWidgetState extends State<EditWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                     ),
                                     Card(
@@ -222,10 +225,11 @@ class _EditWidgetState extends State<EditWidget> {
                                         onTap: () async {
                                           await UsersTable().update(
                                             data: {
-                                              'profile_pic':
-                                                  _model.uploadedFileUrl,
+                                              'profile_pic': _model
+                                                  .uploadedFileUrl_uploadDataE06,
                                             },
-                                            matchingRows: (rows) => rows.eq(
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
                                               'id',
                                               currentUserUid,
                                             ),
@@ -236,7 +240,8 @@ class _EditWidgetState extends State<EditWidget> {
                                               BorderRadius.circular(0.0),
                                           child: Image.network(
                                             _model.isNewImgUploaded
-                                                ? _model.uploadedFileUrl
+                                                ? _model
+                                                    .uploadedFileUrl_uploadDataE06
                                                 : widget.currentImg!,
                                             width: 150.0,
                                             height: 150.0,
@@ -258,8 +263,9 @@ class _EditWidgetState extends State<EditWidget> {
                                             selectedMedia.every((m) =>
                                                 validateFileFormat(
                                                     m.storagePath, context))) {
-                                          setState(() =>
-                                              _model.isDataUploading = true);
+                                          safeSetState(() => _model
+                                                  .isDataUploading_uploadDataE06 =
+                                              true);
                                           var selectedUploadedFiles =
                                               <FFUploadedFile>[];
 
@@ -286,35 +292,36 @@ class _EditWidgetState extends State<EditWidget> {
                                               selectedFiles: selectedMedia,
                                             );
                                           } finally {
-                                            _model.isDataUploading = false;
+                                            _model.isDataUploading_uploadDataE06 =
+                                                false;
                                           }
                                           if (selectedUploadedFiles.length ==
                                                   selectedMedia.length &&
                                               downloadUrls.length ==
                                                   selectedMedia.length) {
-                                            setState(() {
-                                              _model.uploadedLocalFile =
+                                            safeSetState(() {
+                                              _model.uploadedLocalFile_uploadDataE06 =
                                                   selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl =
+                                              _model.uploadedFileUrl_uploadDataE06 =
                                                   downloadUrls.first;
                                             });
                                           } else {
-                                            setState(() {});
+                                            safeSetState(() {});
                                             return;
                                           }
                                         }
 
                                         _model.isNewImgUploaded = true;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       },
                                       text: 'انتخاب تصویر',
                                       options: FFButtonOptions(
                                         width: 150.0,
                                         height: 48.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .accent3,
@@ -326,10 +333,9 @@ class _EditWidgetState extends State<EditWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -338,16 +344,17 @@ class _EditWidgetState extends State<EditWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 24.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await UsersTable().update(
                                             data: {
-                                              'profile_pic':
-                                                  _model.uploadedFileUrl,
+                                              'profile_pic': _model
+                                                  .uploadedFileUrl_uploadDataE06,
                                             },
-                                            matchingRows: (rows) => rows.eq(
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
                                               'id',
                                               currentUserUid,
                                             ),
@@ -357,10 +364,10 @@ class _EditWidgetState extends State<EditWidget> {
                                         options: FFButtonOptions(
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -373,10 +380,9 @@ class _EditWidgetState extends State<EditWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -386,8 +392,8 @@ class _EditWidgetState extends State<EditWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 12.0))
-                                      .around(const SizedBox(height: 12.0)),
+                                      .divide(SizedBox(height: 12.0))
+                                      .around(SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
@@ -399,8 +405,8 @@ class _EditWidgetState extends State<EditWidget> {
                           ))
                             wrapWithModel(
                               model: _model.mobileNavModel,
-                              updateCallback: () => setState(() {}),
-                              child: const MobileNavWidget(
+                              updateCallback: () => safeSetState(() {}),
+                              child: MobileNavWidget(
                                 selectnav: 6,
                               ),
                             ),

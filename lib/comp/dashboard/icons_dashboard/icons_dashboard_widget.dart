@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'icons_dashboard_model.dart';
 export 'icons_dashboard_model.dart';
@@ -25,7 +26,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
     super.initState();
     _model = createModel(context, () => IconsDashboardModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -38,10 +39,10 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: double.infinity,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -52,14 +53,14 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('bulk');
+                context.pushNamed(BulkWidget.routeName);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -72,7 +73,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.snippet_folder,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -87,7 +88,6 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                           fontFamily: 'Peyda',
                           color: FlutterFlowTheme.of(context).accent2,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -101,14 +101,14 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('single');
+                context.pushNamed(SingleWidget.routeName);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -121,7 +121,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_special,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -136,7 +136,6 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                           fontFamily: 'Peyda',
                           color: FlutterFlowTheme.of(context).accent2,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -150,14 +149,14 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('data');
+                context.pushNamed(DataWidget.routeName);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -170,7 +169,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.folder_shared,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -185,7 +184,6 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                           fontFamily: 'Peyda',
                           color: FlutterFlowTheme.of(context).accent2,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -199,14 +197,14 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('purchase');
+                context.pushNamed(PurchaseWidget.routeName);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 85.0,
@@ -219,7 +217,7 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.create_new_folder,
                           color: FlutterFlowTheme.of(context).customColor4,
@@ -234,14 +232,13 @@ class _IconsDashboardWidgetState extends State<IconsDashboardWidget> {
                           fontFamily: 'Peyda',
                           color: FlutterFlowTheme.of(context).accent2,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                   ),
                 ],
               ),
             ),
           ),
-        ].divide(const SizedBox(width: 12.0)),
+        ].divide(SizedBox(width: 12.0)),
       ),
     );
   }

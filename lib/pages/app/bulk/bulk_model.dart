@@ -2,6 +2,7 @@ import '/comp/nav/mobile_nav/mobile_nav_widget.dart';
 import '/comp/nav/side_nav/side_nav_widget.dart';
 import '/comp/nav/top_nav/top_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'bulk_widget.dart' show BulkWidget;
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,6 @@ class BulkModel extends FlutterFlowModel<BulkWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for sideNav component.
   late SideNavModel sideNavModel;
   // Model for TopNav component.
@@ -21,6 +21,8 @@ class BulkModel extends FlutterFlowModel<BulkWidget> {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
+  int get tabBarPreviousIndex =>
+      tabBarController != null ? tabBarController!.previousIndex : 0;
 
   // Model for mobileNav component.
   late MobileNavModel mobileNavModel;
@@ -34,7 +36,6 @@ class BulkModel extends FlutterFlowModel<BulkWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     sideNavModel.dispose();
     topNavModel.dispose();
     tabBarController?.dispose();

@@ -25,7 +25,7 @@ class _WebNav2WidgetState extends State<WebNav2Widget> {
     super.initState();
     _model = createModel(context, () => WebNav2Model());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,14 +46,14 @@ class _WebNav2WidgetState extends State<WebNav2Widget> {
           BoxShadow(
             blurRadius: 0.0,
             color: FlutterFlowTheme.of(context).lineColor,
-            offset: const Offset(
+            offset: Offset(
               1.0,
               0.0,
             ),
           )
         ],
       ),
-      child: const Padding(
+      child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,

@@ -27,7 +27,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
     super.initState();
     _model = createModel(context, () => FoldersCopyModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,7 +46,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
         minWidth: MediaQuery.sizeOf(context).width * 0.3,
         maxWidth: 600.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -54,21 +54,21 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                child: SizedBox(
+                child: Container(
                   width: double.infinity,
                   height: 140.0,
                   child: Stack(
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                         child: PageView(
                           controller: _model.pageViewController ??=
                               PageController(initialPage: 0),
                           scrollDirection: Axis.horizontal,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -80,7 +80,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -91,7 +91,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                         size: 48.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -112,11 +112,10 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 '3 لیست | 45 فایل',
@@ -126,7 +125,6 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -139,7 +137,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -151,7 +149,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -162,7 +160,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                         size: 48.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -183,11 +181,10 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 '3 لیست | 45 ایمیل',
@@ -197,7 +194,6 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -210,7 +206,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -222,7 +218,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -233,7 +229,7 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                         size: 48.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -254,11 +250,10 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 '3 لیست | 45 ایمیل',
@@ -268,7 +263,6 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                                                         .override(
                                                           fontFamily: 'Peyda',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -284,9 +278,9 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: smooth_page_indicator.SmoothPageIndicator(
                             controller: _model.pageViewController ??=
@@ -296,10 +290,10 @@ class _FoldersCopyWidgetState extends State<FoldersCopyWidget> {
                             onDotClicked: (i) async {
                               await _model.pageViewController!.animateToPage(
                                 i,
-                                duration: const Duration(milliseconds: 500),
+                                duration: Duration(milliseconds: 500),
                                 curve: Curves.ease,
                               );
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             effect: smooth_page_indicator.ExpandingDotsEffect(
                               expansionFactor: 3.0,

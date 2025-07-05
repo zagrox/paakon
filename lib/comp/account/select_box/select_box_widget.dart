@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'select_box_model.dart';
 export 'select_box_model.dart';
@@ -27,7 +28,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
     super.initState();
     _model = createModel(context, () => SelectBoxModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,7 +45,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
       height: 300.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -54,7 +55,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
             ),
           )
         ],
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -62,12 +63,12 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
               child: Text(
                 'برای شروع پاکسازی، ابتدا فایل خود را انتخاب و آپلود کنید.',
                 textAlign: TextAlign.center,
@@ -75,19 +76,19 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                       fontFamily: 'Peyda',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   final selectedFiles = await selectFiles(
                     multiFile: false,
                   );
                   if (selectedFiles != null) {
-                    setState(() => _model.isDataUploading = true);
+                    safeSetState(
+                        () => _model.isDataUploading_uploadDataOd4 = true);
                     var selectedUploadedFiles = <FFUploadedFile>[];
 
                     try {
@@ -104,18 +105,19 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                           .toList();
                     } finally {
                       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                      _model.isDataUploading = false;
+                      _model.isDataUploading_uploadDataOd4 = false;
                     }
                     if (selectedUploadedFiles.length == selectedFiles.length) {
-                      setState(() {
-                        _model.uploadedLocalFile = selectedUploadedFiles.first;
+                      safeSetState(() {
+                        _model.uploadedLocalFile_uploadDataOd4 =
+                            selectedUploadedFiles.first;
                       });
                       showUploadMessage(
                         context,
                         'Success!',
                       );
                     } else {
-                      setState(() {});
+                      safeSetState(() {});
                       showUploadMessage(
                         context,
                         'Failed to upload file',
@@ -124,11 +126,11 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                     }
                   }
 
-                  if (_model.isDataUploading) {
+                  if (_model.isDataUploading_uploadDataOd4) {
                     context.pushNamed(
-                      'bulk',
+                      BulkWidget.routeName,
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -140,23 +142,22 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 text: 'انتخاب فایل ایمیل ...',
                 icon: Icon(
                   Icons.control_point_duplicate,
-                  color: FlutterFlowTheme.of(context).primary,
                   size: 32.0,
                 ),
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  iconColor: FlutterFlowTheme.of(context).primary,
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily: 'Peyda',
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   elevation: 2.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
@@ -164,7 +165,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   context.pop();
@@ -173,15 +174,14 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Peyda',
                         color: FlutterFlowTheme.of(context).accent2,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   elevation: 0.0,
                   borderSide: BorderSide(
@@ -192,7 +192,7 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   Navigator.pop(context);
@@ -201,18 +201,17 @@ class _SelectBoxWidgetState extends State<SelectBoxWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily: 'Peyda',
                         color: FlutterFlowTheme.of(context).secondary,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   elevation: 0.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 0.0,
                   ),
